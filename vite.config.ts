@@ -14,6 +14,8 @@ export default defineConfig(({ mode }) => {
       "process.env.NODE_ENV": JSON.stringify(env.NODE_ENV || mode),
       "process.env.PORT": JSON.stringify(env.PORT),
     },
+    // Add environment variables for Vite (VITE_ prefix)
+    envPrefix: ['VITE_', 'SUPABASE_'],
     server: {
       proxy: {
         "/api": {

@@ -1,16 +1,34 @@
-# Sentinel - Test Automation Dashboard
+# 🚀 Sentinel Dashboard - Real-time Partner Panel
 
-A comprehensive real-time dashboard for monitoring test automation results across multiple platforms including Desktop Site, Mobile Site, OMS, and Partner Panel systems.
+A real-time dashboard for monitoring Partner Panel journey automation with **instant updates** from Supabase. Built with React, TypeScript, Vite, and deployed on Vercel.
 
-## 🚀 Features
+## ✨ Features
 
-- **Real-time Test Monitoring**: Live updates of test execution results
-- **Multi-Platform Support**: Desktop Site, Mobile Site, OMS, Partner Panel, and Android
-- **Journey-Based Testing**: Intelligent journey splitting with step-by-step tracking
-- **Failure Analysis**: Screenshot capture and detailed error reporting for failed tests
-- **Interactive Charts**: 3D visualizations and trend analysis
-- **Dark/Light Theme**: Toggle between themes for better user experience
-- **Supabase Integration**: Real-time data from PostgreSQL database
+- **⚡ INSTANT Updates**: Dashboard updates within 1-2 seconds when data arrives in database
+- **🔄 Real-time Synchronization**: Works with any automation frequency (2 hours, 30 minutes, or manual)
+- **📊 Single Journey Display**: Shows one comprehensive Partner Panel journey with all steps
+- **🔗 Live Connection Status**: Visual indicator of real-time connection health
+- **📱 Responsive Design**: Works on desktop and mobile devices
+- **🎯 Zero Configuration**: Automatic deployment with Vercel + GitHub integration
+- **🔍 Debug Mode**: JSON view for data verification and troubleshooting
+
+## 🏗️ Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Automation    │───▶│    Supabase     │───▶│   Dashboard     │
+│     System      │    │   (Database +   │    │   (Vercel)      │
+│ (Any Frequency) │    │   Real-time)    │    │ (Instant Updates)│
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+**Key Point**: Dashboard updates **INSTANTLY** when data arrives, regardless of automation schedule!
+
+### ⚡ Real-time Update Examples:
+- **Automation runs every 2 hours** → Dashboard updates within 1-2 seconds of data insertion
+- **Automation runs every 30 minutes** → Dashboard updates within 1-2 seconds of data insertion  
+- **Manual data insertion** → Dashboard updates within 1-2 seconds of data insertion
+- **Any frequency works** → Dashboard always responds instantly to database changes
 
 ## 🛠 Tech Stack
 
@@ -138,7 +156,7 @@ The dashboard expects the following Supabase tables:
 | Platform | Status | Features |
 |----------|--------|----------|
 | Desktop Site | ✅ Active | Real data, journey splitting, screenshots |
-| Mobile Site | 🔄 Mock Data | Coming soon |
+| Mobile Site | � Mock Data | Coming soon |
 | OMS | ✅ Active | Real data, failure tracking |
 | Partner Panel | ✅ Active | Real data, performance metrics |
 | Android | 🔄 Mock Data | Coming soon |
@@ -175,7 +193,7 @@ The dashboard expects the following Supabase tables:
 4. Test thoroughly
 5. Submit a pull request
 
-## 📞 Support
+## � Support
 
 For deployment issues or questions:
 - Check the [deployment guide](./RENDER_DEPLOYMENT.md)
