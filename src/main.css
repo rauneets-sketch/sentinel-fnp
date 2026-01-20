@@ -178,10 +178,6 @@ body {
   transition: opacity 0.3s ease;
 }
 
-[data-theme="dark"] .logo {
-  filter: invert(1) brightness(2);
-}
-
 .title {
   font-size: 28px;
   font-weight: 600;
