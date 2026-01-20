@@ -652,6 +652,9 @@ body {
   grid-template-columns: repeat(5, 1fr) !important;
   gap: 20px !important;
   margin-top: 20px !important;
+  width: 100% !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
 }
 
 /* Responsive breakpoints for the stats grids */
@@ -665,58 +668,7 @@ body {
 @media (max-width: 900px) {
   #liveStatsGrid,
   #statsGrid {
-    gap: 12px !important;
-  }
-
-  #liveStatsGrid .stat-card,
-  #statsGrid .stat-card {
-    padding: 12px !important;
-    min-height: 100px !important;
-  }
-
-  #liveStatsGrid .stat-value,
-  #statsGrid .stat-value {
-    font-size: 18px !important;
-    line-height: 1.2 !important;
-  }
-
-  #liveStatsGrid .stat-label,
-  #statsGrid .stat-label {
-    font-size: 10px !important;
-    line-height: 1.3 !important;
-    word-wrap: break-word !important;
-  }
-}
-
-@media (max-width: 768px) {
-  #liveStatsGrid,
-  #statsGrid {
-    gap: 10px !important;
-  }
-
-  #liveStatsGrid .stat-card,
-  #statsGrid .stat-card {
-    padding: 10px !important;
-    min-height: 90px !important;
-  }
-
-  #liveStatsGrid .stat-value,
-  #statsGrid .stat-value {
-    font-size: 16px !important;
-    line-height: 1.2 !important;
-  }
-
-  #liveStatsGrid .stat-label,
-  #statsGrid .stat-label {
-    font-size: 9px !important;
-    line-height: 1.3 !important;
-    word-wrap: break-word !important;
-  }
-}
-
-@media (max-width: 600px) {
-  #liveStatsGrid,
-  #statsGrid {
+    grid-template-columns: repeat(5, 1fr) !important;
     gap: 8px !important;
   }
 
@@ -740,37 +692,224 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  #liveStatsGrid,
+  #statsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+  }
+
+  #liveStatsGrid .stat-card,
+  #statsGrid .stat-card {
+    padding: 12px !important;
+    min-height: 100px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  #liveStatsGrid .stat-value,
+  #statsGrid .stat-value {
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+  }
+
+  #liveStatsGrid .stat-label,
+  #statsGrid .stat-label {
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #liveStatsGrid,
+  #statsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  #liveStatsGrid .stat-card,
+  #statsGrid .stat-card {
+    padding: 10px !important;
+    min-height: 90px !important;
+  }
+
+  #liveStatsGrid .stat-value,
+  #statsGrid .stat-value {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+
+  #liveStatsGrid .stat-label,
+  #statsGrid .stat-label {
+    font-size: 9px !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+  }
+}
+
 @media (max-width: 480px) {
   #liveStatsGrid,
   #statsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 6px !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+  }
+
+  #liveStatsGrid .stat-card,
+  #statsGrid .stat-card {
+    padding: 8px !important;
+    min-height: 80px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  #liveStatsGrid .stat-value,
+  #statsGrid .stat-value {
+    font-size: 12px !important;
+    line-height: 1.1 !important;
+  }
+
+  #liveStatsGrid .stat-label,
+  #statsGrid .stat-label {
+    font-size: 8px !important;
+    line-height: 1.1 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  #liveStatsGrid .stat-icon,
+  #statsGrid .stat-icon {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 8px !important;
+    margin-bottom: 1px !important;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+  #liveStatsGrid,
+  #statsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4px !important;
+    padding: 0 !important;
+    margin: 8px 0 !important;
   }
 
   #liveStatsGrid .stat-card,
   #statsGrid .stat-card {
     padding: 6px !important;
     min-height: 70px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: none !important;
   }
 
   #liveStatsGrid .stat-value,
   #statsGrid .stat-value {
-    font-size: 12px !important;
-    line-height: 1.2 !important;
+    font-size: 10px !important;
+    line-height: 1 !important;
   }
 
   #liveStatsGrid .stat-label,
   #statsGrid .stat-label {
     font-size: 7px !important;
-    line-height: 1.3 !important;
+    line-height: 1 !important;
     word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
   #liveStatsGrid .stat-icon,
   #statsGrid .stat-icon {
-    width: 30px !important;
-    height: 30px !important;
-    font-size: 14px !important;
-    margin-bottom: 4px !important;
+    width: 12px !important;
+    height: 12px !important;
+    font-size: 6px !important;
+    margin-bottom: 1px !important;
+  }
+}
+
+/* Ultra small screens - ensure no overflow */
+@media (max-width: 320px) {
+  #liveStatsGrid,
+  #statsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3px !important;
+    padding: 0 !important;
+    margin: 5px 0 !important;
+  }
+
+  #liveStatsGrid .stat-card,
+  #statsGrid .stat-card {
+    padding: 4px !important;
+    min-height: 60px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: none !important;
+    border-radius: 4px !important;
+  }
+
+  #liveStatsGrid .stat-value,
+  #statsGrid .stat-value {
+    font-size: 9px !important;
+    line-height: 1 !important;
+  }
+
+  #liveStatsGrid .stat-label,
+  #statsGrid .stat-label {
+    font-size: 6px !important;
+    line-height: 1 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  #liveStatsGrid .stat-icon,
+  #statsGrid .stat-icon {
+    width: 12px !important;
+    height: 12px !important;
+    font-size: 6px !important;
+    margin-bottom: 1px !important;
+  }
+}
+
+/* Ensure no horizontal scrolling on mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+
+  #liveStatsGrid,
+  #statsGrid {
+    max-width: calc(100vw - 20px) !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #liveStatsGrid .stat-card,
+  #statsGrid .stat-card {
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  /* Ensure parent container doesn't overflow */
+  .container {
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Fix for section containers */
+  .section {
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
 }
 
