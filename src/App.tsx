@@ -268,7 +268,6 @@ function App() {
             <div class="automation-info">FNP Automation Framework - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="duration-info">Duration: <span class="duration-value">${desktop.duration}ms</span></div>
             <div class="journeys-info">User Journeys: <span class="journeys-value">${desktop.modules?.length || 0}</span></div>
             <div class="steps-info">Test Steps: <span class="steps-value">${desktop.total}</span></div>
             <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
@@ -292,7 +291,6 @@ function App() {
             <div class="automation-info">FNP Mobile Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">MOBILE WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="duration-info">Duration: <span class="duration-value">0ms</span></div>
             <div class="journeys-info">User Journeys: <span class="journeys-value">0</span></div>
             <div class="steps-info">Test Steps: <span class="steps-value">0</span></div>
             <div class="success-info">Success Rate: <span class="success-value">0%</span></div>
@@ -322,7 +320,6 @@ function App() {
             <div class="automation-info">FNP OMS Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">ADMIN PANEL</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="duration-info">Duration: <span class="duration-value">${oms.duration}ms</span></div>
             <div class="journeys-info">User Journeys: <span class="journeys-value">${oms.modules?.length || 0}</span></div>
             <div class="steps-info">Test Steps: <span class="steps-value">${oms.total}</span></div>
             <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
@@ -355,7 +352,6 @@ function App() {
             <div class="automation-info">FNP Partner Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">PARTNER WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="duration-info">Duration: <span class="duration-value">${android.duration}ms</span></div>
             <div class="journeys-info">User Journeys: <span class="journeys-value">${android.modules?.length || 0}</span></div>
             <div class="steps-info">Test Steps: <span class="steps-value">${android.total}</span></div>
             <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
