@@ -11,7 +11,6 @@ import ExportData from "highcharts/modules/export-data";
 import Accessibility from "highcharts/modules/accessibility";
 import axios from "axios";
 import { JourneyDetailsView } from "./components/JourneyDetailsView";
-import PartnerPanelRealtime from "./components/PartnerPanelRealtime";
 import "./components/JourneyDetailsView.css";
 
 const initModule = (mod: any) => {
@@ -405,7 +404,7 @@ function App() {
       .map((platform) => {
         const data = testData[platform];
         if (!data) return "";
-        
+
         // For mobile platform, show zeros
         if (platform === "mobile") {
           return `
@@ -423,7 +422,7 @@ function App() {
             </div>
           `;
         }
-        
+
         const passRate =
           data.total > 0 ? Math.round((data.passed / data.total) * 100) : 0;
         const failRate =
@@ -1108,15 +1107,6 @@ function App() {
           Real-Time Journey Performance Analysis
         </div>
         <div id="bubbleChart" />
-      </div>
-
-      {/* Real-time Partner Panel Section */}
-      <div className="realtime-section">
-        <div className="section-header">
-          <h2>🚀 Real-time Partner Panel Dashboard</h2>
-          <p>Live updates from Supabase - No refresh required!</p>
-        </div>
-        <PartnerPanelRealtime />
       </div>
     </div>
   );
