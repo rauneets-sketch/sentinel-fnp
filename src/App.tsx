@@ -203,11 +203,11 @@ function App() {
   async function loadData() {
     try {
       const timestamp = Date.now();
-      const baseUrl = (import.meta.env.VITE_API_BASE_URL || "").replace(
-        /\/+$/,
-        "",
-      );
-      const url = `${baseUrl}/api/test-results?_t=${timestamp}`;
+      // Use VITE_API_BASE_URL for development, empty string for production (relative URLs)
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
+      const url = baseUrl
+        ? `${baseUrl}/api/test-results?_t=${timestamp}`
+        : `/api/test-results?_t=${timestamp}`;
       const response = await axios.get<TestResultsResponse>(url, {
         headers: {
           "Cache-Control": "no-cache",
