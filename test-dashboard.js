@@ -1,7 +1,7 @@
 import axios from "axios";
 
 async function testDashboard() {
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = "http://localhost:5000";
 
   console.log("🧪 Testing Dashboard API and Data Display...\n");
 
@@ -13,7 +13,7 @@ async function testDashboard() {
 
     console.log("✅ API Response received");
     console.log(
-      `📊 Desktop Site: ${data.desktop.total} journeys, ${data.desktop.totalSteps} steps`
+      `📊 Desktop Site: ${data.desktop.total} journeys, ${data.desktop.totalSteps} steps`,
     );
     console.log(`📊 OMS: ${data.oms.total} journeys`);
     console.log(`📊 Partner Panel: ${data.android.total} journeys`);
@@ -30,7 +30,7 @@ async function testDashboard() {
         console.log(`   First 3 steps:`);
         journey.steps.slice(0, 3).forEach((step, i) => {
           console.log(
-            `     ${i + 1}. ${step.name || step.step_name} - ${step.status}`
+            `     ${i + 1}. ${step.name || step.step_name} - ${step.status}`,
           );
         });
       }
@@ -39,16 +39,16 @@ async function testDashboard() {
     // Test individual platform endpoint
     console.log("\n2. Testing individual platform endpoint...");
     const desktopResponse = await axios.get(
-      `${baseUrl}/api/test-results/desktop`
+      `${baseUrl}/api/test-results/desktop`,
     );
     const desktopData = desktopResponse.data;
 
     console.log(
-      `📱 Individual Desktop endpoint: ${desktopData.total} journeys`
+      `📱 Individual Desktop endpoint: ${desktopData.total} journeys`,
     );
     if (desktopData.total !== data.desktop.total) {
       console.log(
-        `⚠️  WARNING: Mismatch between main endpoint (${data.desktop.total}) and individual endpoint (${desktopData.total})`
+        `⚠️  WARNING: Mismatch between main endpoint (${data.desktop.total}) and individual endpoint (${desktopData.total})`,
       );
     } else {
       console.log("✅ Endpoints are consistent");
@@ -60,7 +60,7 @@ async function testDashboard() {
       const tabResponse = await axios.get(`${baseUrl}/api/tab-performance/OMS`);
       if (Array.isArray(tabResponse.data)) {
         console.log(
-          `✅ Tab Performance (OMS): Received ${tabResponse.data.length} tab metrics`
+          `✅ Tab Performance (OMS): Received ${tabResponse.data.length} tab metrics`,
         );
       } else {
         console.log("❌ Tab Performance: Invalid response format");
@@ -73,11 +73,11 @@ async function testDashboard() {
     console.log("\n4. Testing Recent Failures API...");
     try {
       const failuresResponse = await axios.get(
-        `${baseUrl}/api/recent-failures`
+        `${baseUrl}/api/recent-failures`,
       );
       if (Array.isArray(failuresResponse.data)) {
         console.log(
-          `✅ Recent Failures: Received ${failuresResponse.data.length} failure records`
+          `✅ Recent Failures: Received ${failuresResponse.data.length} failure records`,
         );
       } else {
         console.log("❌ Recent Failures: Invalid response format");
