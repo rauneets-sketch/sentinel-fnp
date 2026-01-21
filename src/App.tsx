@@ -30,11 +30,14 @@ initModule(Exporting);
 initModule(ExportData);
 initModule(Accessibility);
 
+import { MOBILE_JOURNEYS } from "./data/mockJourneys";
+
 interface ModuleStats {
   name: string;
   passed: number;
   failed: number;
   duration: number;
+  steps?: any[];
 }
 
 interface PlatformStats {
@@ -96,13 +99,10 @@ function App() {
 
   useEffect(() => {
     setLastRefreshTime(new Date());
-    // Add a small delay to ensure DOM elements are ready
-    setTimeout(() => {
-      renderLiveStats();
-      renderStats();
-      renderCharts();
-      showModules(currentPlatform);
-    }, 100);
+    renderLiveStats();
+    renderStats();
+    renderCharts();
+    showModules(currentPlatform);
   }, [testData, currentPlatform]);
 
   useEffect(() => {
@@ -150,8 +150,21 @@ function App() {
   }, [lastRefreshTime]);
 
   function generateMockData(): TestResultsResponse {
-    // Real test data from December 19th, 6 PM - 17 journeys with 100% success
-    const dec19TestDate = new Date("2024-12-19T18:00:00").toISOString();
+    const mobileModules = MOBILE_JOURNEYS.map((j) => ({
+      name: j.name,
+      passed: j.passed || 0,
+      failed: j.failed || 0,
+      duration: j.duration || 0,
+      steps: j.steps,
+    }));
+    const mobileTotal = MOBILE_JOURNEYS.reduce(
+      (acc, j) => acc + (j.steps?.length || 0),
+      0,
+    );
+    const mobilePassed = MOBILE_JOURNEYS.reduce(
+      (acc, j) => acc + (j.steps?.length || 0),
+      0,
+    ); // Assuming all steps passed if journey passed
 
     return {
       desktop: {
@@ -159,138 +172,26 @@ function App() {
         passed: 17,
         failed: 0,
         skipped: 0,
-        duration: 9, // 9ms total execution as mentioned
-        lastRun: dec19TestDate,
-        modules: [
-          {
-            name: "Home Page Exploration",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Payment Methods Testing",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "International Phone Number Change",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Reminder and FAQ Testing",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "International Purchase",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Combinational Purchase",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Cake Variant Testing",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Invalid Coupon Testing",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Valid Coupon Testing",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Personalized Product Purchase",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Message Card Integration",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Product Exploration Journey",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Same SKU Product Exploration",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Search Based Purchase",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Personalized Product with Upload 1 Photo Purchase",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Personalized Product with Upload 4 Photo Purchase",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-          {
-            name: "Location Testing",
-            passed: 1,
-            failed: 0,
-            duration: 0.5,
-            status: "PASSED",
-          },
-        ],
+        duration: 1200,
+        lastRun: new Date().toISOString(),
+        modules: Array.from({ length: 17 }, (_, i) => ({
+          name: `Desktop Journey ${i + 1}`,
+          passed: 1,
+          failed: 0,
+          duration: 100,
+        })),
       },
       mobile: {
-        total: 0,
-        passed: 0,
+        total: 15,
+        passed: 15,
         failed: 0,
         skipped: 0,
-        duration: 0,
+        duration: MOBILE_JOURNEYS.reduce(
+          (acc, j) => acc + (j.duration || 0),
+          0,
+        ),
         lastRun: new Date().toISOString(),
-        modules: [],
+        modules: mobileModules,
       },
       android: {
         total: 142,
@@ -326,11 +227,11 @@ function App() {
   async function loadData() {
     try {
       const timestamp = Date.now();
-      // Use VITE_API_BASE_URL for development, empty string for production (relative URLs)
-      const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
-      const url = baseUrl
-        ? `${baseUrl}/api/test-results?_t=${timestamp}`
-        : `/api/test-results?_t=${timestamp}`;
+      const baseUrl = (import.meta.env.VITE_API_BASE_URL || "").replace(
+        /\/+$/,
+        "",
+      );
+      const url = `${baseUrl}/api/index?_t=${timestamp}`;
       const response = await axios.get<TestResultsResponse>(url, {
         headers: {
           "Cache-Control": "no-cache",
@@ -357,11 +258,7 @@ function App() {
 
   function renderLiveStats() {
     const liveStatsGrid = document.getElementById("liveStatsGrid");
-    if (!liveStatsGrid) {
-      console.log("❌ liveStatsGrid element not found");
-      return;
-    }
-    console.log("✅ liveStatsGrid element found, rendering...");
+    if (!liveStatsGrid) return;
     const desktop = testData.desktop;
     const mobile = testData.mobile;
     const oms = testData.oms;
@@ -376,25 +273,10 @@ function App() {
         desktop.total > 0
           ? Math.round((desktop.passed / desktop.total) * 100)
           : 0;
-      const avgTime =
-        desktop.total > 0
-          ? (desktop.duration / desktop.total).toFixed(3)
-          : "0.000";
+      const avgTime = (desktop.duration / 1000).toFixed(3);
       const status = desktop.failed > 0 ? "ISSUES DETECTED" : "ALL SYSTEMS GO";
       const statusClass =
         desktop.failed > 0 ? "status-error" : "status-success";
-
-      // Format the execution date properly
-      const executionDate = desktop.lastRun
-        ? new Date(desktop.lastRun).toLocaleString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true,
-          })
-        : "Unknown";
 
       cards.push(`
         <div class="detailed-stat-card desktop-border">
@@ -403,10 +285,12 @@ function App() {
             <div class="card-title">Desktop Site</div>
           </div>
           <div class="card-content">
-            <div class="automation-info">FNP Desktop Automation - Playwright Test Suite</div>
+            <div class="automation-info">FNP Automation Framework - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">WEB</span></div>
-            <div class="journeys-info">User Journeys: <span class="journeys-value">${desktop.total}</span></div>
-            <div class="steps-info">Test Steps: <span class="steps-value">17</span></div>
+            <div class="environment-info">Environment: <span class="env-value">prod</span></div>
+            <div class="duration-info">Duration: <span class="duration-value">${desktop.duration}ms</span></div>
+            <div class="journeys-info">User Journeys: <span class="journeys-value">${desktop.modules?.length || 0}</span></div>
+            <div class="steps-info">Test Steps: <span class="steps-value">${desktop.total}</span></div>
             <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
             <div class="avg-time-info">Avg Step Time: <span class="time-value">${avgTime}ms</span></div>
             <div class="failed-info">Failed Steps: <span class="failed-value">${desktop.failed}</span></div>
@@ -416,8 +300,14 @@ function App() {
       `);
     }
 
-    // Mobile Site Card - Show zeros for all values
+    // Mobile Site Card
     if (mobile) {
+      const successRate =
+        mobile.total > 0 ? Math.round((mobile.passed / mobile.total) * 100) : 0;
+      const avgTime = (mobile.duration / 1000).toFixed(3);
+      const status = mobile.failed > 0 ? "ISSUES DETECTED" : "ALL SYSTEMS GO";
+      const statusClass = mobile.failed > 0 ? "status-error" : "status-success";
+
       cards.push(`
         <div class="detailed-stat-card mobile-border">
           <div class="card-header">
@@ -428,13 +318,14 @@ function App() {
             <div class="automation-info">FNP Mobile Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">MOBILE WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="journeys-info">User Journeys: <span class="journeys-value">0</span></div>
-            <div class="steps-info">Test Steps: <span class="steps-value">0</span></div>
-            <div class="success-info">Success Rate: <span class="success-value">0%</span></div>
-            <div class="avg-time-info">Avg Step Time: <span class="time-value">0ms</span></div>
-            <div class="failed-info">Failed Steps: <span class="failed-value">0</span></div>
+            <div class="duration-info">Duration: <span class="duration-value">${mobile.duration}ms</span></div>
+            <div class="journeys-info">User Journeys: <span class="journeys-value">${mobile.modules?.length || 0}</span></div>
+            <div class="steps-info">Test Steps: <span class="steps-value">${mobile.total}</span></div>
+            <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
+            <div class="avg-time-info">Avg Step Time: <span class="time-value">${avgTime}ms</span></div>
+            <div class="failed-info">Failed Steps: <span class="failed-value">${mobile.failed}</span></div>
           </div>
-          <div class="card-status status-success">Status: NO DATA ⚪</div>
+          <div class="card-status ${statusClass}">Status: ${status} ${mobile.failed > 0 ? "⚠" : "✓"}</div>
         </div>
       `);
     }
@@ -457,6 +348,7 @@ function App() {
             <div class="automation-info">FNP OMS Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">ADMIN PANEL</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
+            <div class="duration-info">Duration: <span class="duration-value">${oms.duration}ms</span></div>
             <div class="journeys-info">User Journeys: <span class="journeys-value">${oms.modules?.length || 0}</span></div>
             <div class="steps-info">Test Steps: <span class="steps-value">${oms.total}</span></div>
             <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
@@ -489,6 +381,7 @@ function App() {
             <div class="automation-info">FNP Partner Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">PARTNER WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
+            <div class="duration-info">Duration: <span class="duration-value">${android.duration}ms</span></div>
             <div class="journeys-info">User Journeys: <span class="journeys-value">${android.modules?.length || 0}</span></div>
             <div class="steps-info">Test Steps: <span class="steps-value">${android.total}</span></div>
             <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
@@ -521,11 +414,7 @@ function App() {
 
   function renderStats() {
     const statsGrid = document.getElementById("statsGrid");
-    if (!statsGrid) {
-      console.log("❌ statsGrid element not found");
-      return;
-    }
-    console.log("✅ statsGrid element found, rendering...");
+    if (!statsGrid) return;
     const platforms: PlatformKey[] = [
       "desktop",
       "mobile",
@@ -537,25 +426,6 @@ function App() {
       .map((platform) => {
         const data = testData[platform];
         if (!data) return "";
-
-        // For mobile platform, show zeros
-        if (platform === "mobile") {
-          return `
-            <div class="stat-card">
-              <div class="stat-icon mobile-bg">
-                <i class="fas fa-circle-notch"></i>
-              </div>
-              <div class="stat-value">0%</div>
-              <div class="stat-label">Mobile Site Success Rate</div>
-              <div class="stat-details">
-                <div class="stat-detail"><span>Passed:</span><strong>0</strong></div>
-                <div class="stat-detail"><span>Failed:</span><strong>0</strong></div>
-                <div class="stat-detail"><span>Skipped:</span><strong>0</strong></div>
-              </div>
-            </div>
-          `;
-        }
-
         const passRate =
           data.total > 0 ? Math.round((data.passed / data.total) * 100) : 0;
         const failRate =
@@ -625,10 +495,6 @@ function App() {
 
     const getData = (field: "passed" | "failed" | "skipped") =>
       platformKeys.map((key) => {
-        // For mobile platform, always return 0
-        if (key === "mobile") {
-          return 0;
-        }
         const data = testData[key];
         return data && !data.comingSoon
           ? (data as PlatformStats)[field] || 0
@@ -737,7 +603,7 @@ function App() {
       trendSeries.push({
         type: "line",
         name: "Mobile Site",
-        data: [0, 0, 0, 0, 0, 0, 0], // Show zeros for all days
+        data: generateTrendData(mobileRate),
         color: "#2196F3",
         marker: { symbol: "square" },
       });
@@ -894,15 +760,15 @@ function App() {
       });
     }
 
-    // Add Mobile data - DISABLED (show zeros only)
-    // if (mobile.modules && mobile.modules.length > 0) {
-    //   bubbleSeries.push({
-    //     type: "bubble",
-    //     name: "Mobile Site",
-    //     data: processModulesForBubble(mobile.modules, "Mobile", mobile),
-    //     color: "#2196F3",
-    //   });
-    // }
+    // Add Mobile data
+    if (mobile.modules && mobile.modules.length > 0) {
+      bubbleSeries.push({
+        type: "bubble",
+        name: "Mobile Site",
+        data: processModulesForBubble(mobile.modules, "Mobile", mobile),
+        color: "#2196F3",
+      });
+    }
 
     // Add OMS data
     if (oms.modules && oms.modules.length > 0) {
@@ -1055,20 +921,21 @@ function App() {
       3: "International Phone Number Change",
       4: "Reminder and FAQ Testing",
       5: "International Purchase",
+      6: "Mobile Location Testing",
       7: "Combinational Purchase",
+      8: "Mobile Message Card",
       9: "Cake Variant Testing",
-      10: "Invalid Coupon Testing",
-      11: "Valid Coupon Testing",
-      12: "Personalized Product Purchase",
-      13: "Message Card Integration",
-      14: "Product Exploration Journey",
-      15: "Same SKU Product Exploration",
-      16: "Search Based Purchase",
-      17: "Personalized Product with Upload 1 Photo Purchase",
-      18: "Personalized Product with Upload 4 Photo Purchase",
-      19: "Location Testing",
-      20: "Spherical Home Page Icon Exploration",
-      21: "Gmail OTP Login",
+      10: "Coupon Testing",
+      11: "Personalized Product Purchase",
+      12: "Message Card Integration",
+      13: "Product Exploration Journey",
+      14: "Same SKU Product Exploration",
+      15: "Search Based Purchase",
+      16: "Personalized Product with Photo Upload",
+      17: "Location Testing",
+      18: "Spherical Home Page Icon Exploration",
+      19: "Gmail OTP Login",
+      20: "Gmail OTP Login",
     };
 
     const modulesGrid = document.getElementById("modulesGrid");
