@@ -351,7 +351,86 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "User Authentication: Navigate to Login Page",
+              status: "PASSED",
+              duration: 50,
+              step_name: "User Authentication: Navigate to Login Page",
+            },
+            {
+              name: "User Authentication: Navigate to Login Page",
+              status: "PASSED",
+              duration: 45,
+              step_name: "User Authentication: Navigate to Login Page",
+            },
+            {
+              name: "User Authentication: Dismiss Notification Popup",
+              status: "PASSED",
+              duration: 30,
+              step_name: "User Authentication: Dismiss Notification Popup",
+            },
+            {
+              name: "User Authentication: Click Guest Login",
+              status: "PASSED",
+              duration: 40,
+              step_name: "User Authentication: Click Guest Login",
+            },
+            {
+              name: "User Authentication: Email Entry",
+              status: "PASSED",
+              duration: 60,
+              step_name: "User Authentication: Email Entry",
+            },
+            {
+              name: "Homepage Setup: Clear Cart",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Homepage Setup: Clear Cart",
+            },
+            {
+              name: "Homepage Setup: Set Delivery Location",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Homepage Setup: Set Delivery Location",
+            },
+            {
+              name: "Product Discovery: Navigate to Gift Finder",
+              status: "PASSED",
+              duration: 45,
+              step_name: "Product Discovery: Navigate to Gift Finder",
+            },
+            {
+              name: "Product Selection: Navigate to Carnations",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Product Selection: Navigate to Carnations",
+            },
+            {
+              name: "Product Selection: Navigate to Carnations",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Product Selection: Navigate to Carnations",
+            },
+            {
+              name: "Cart Management: Add Product to Cart",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Cart Management: Add Product to Cart",
+            },
+            {
+              name: "Payment Process: Proceed to Payment",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Payment Process: Proceed to Payment",
+            },
+            {
+              name: "Order Completion: PNC Created Successfully",
+              status: "PASSED",
+              duration: 80,
+              step_name: "Order Completion: PNC Created Successfully",
+            },
+          ],
         },
         {
           name: "Payment Methods Testing",
@@ -359,7 +438,56 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Product Discovery: Navigate to Cakes Section",
+              status: "PASSED",
+              duration: 45,
+              step_name: "Product Discovery: Navigate to Cakes Section",
+            },
+            {
+              name: "Product Selection: Select Cake Product",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Product Selection: Select Cake Product",
+            },
+            {
+              name: "Delivery Setup: Select Date & Time Slot",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Delivery Setup: Select Date & Time Slot",
+            },
+            {
+              name: "Payment Process: Proceed to Payment",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Payment Process: Proceed to Payment",
+            },
+            {
+              name: "Payment Process: Test QR Payment Method",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Payment Process: Test QR Payment Method",
+            },
+            {
+              name: "Payment Process: Test UPI Payment Method",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Payment Process: Test UPI Payment Method",
+            },
+            {
+              name: "Payment Process: Test Card Payment Method",
+              status: "PASSED",
+              duration: 75,
+              step_name: "Payment Process: Test Card Payment Method",
+            },
+            {
+              name: "Order Completion: All Payment Methods Tested",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Order Completion: All Payment Methods Tested",
+            },
+          ],
         },
         {
           name: "International Phone Number Change",
@@ -367,7 +495,57 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Profile Management: Navigate to Profile Page",
+              status: "PASSED",
+              duration: 45,
+              step_name: "Profile Management: Navigate to Profile Page",
+            },
+            {
+              name: "Profile Management: Change International Phone Number",
+              status: "PASSED",
+              duration: 80,
+              step_name:
+                "Profile Management: Change International Phone Number",
+            },
+            {
+              name: "Navigation: Return to Homepage",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Navigation: Return to Homepage",
+            },
+            {
+              name: "Product Discovery: Navigate to Wedding Section",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Product Discovery: Navigate to Wedding Section",
+            },
+            {
+              name: "Delivery Setup: Set Wedding Delivery Date",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Delivery Setup: Set Wedding Delivery Date",
+            },
+            {
+              name: "Address Management: Edit Sender Phone Number",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Address Management: Edit Sender Phone Number",
+            },
+            {
+              name: "Payment Process: Proceed and Cancel Payment",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Payment Process: Proceed and Cancel Payment",
+            },
+            {
+              name: "Order Completion: Phone Number Change Completed",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Order Completion: Phone Number Change Completed",
+            },
+          ],
         },
         {
           name: "Reminder and FAQ Testing",
@@ -375,7 +553,44 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Navigation: Navigate to Reminder Section",
+              status: "PASSED",
+              duration: 45,
+              step_name: "Navigation: Navigate to Reminder Section",
+            },
+            {
+              name: "Reminder Management: Create New Reminder",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Reminder Management: Create New Reminder",
+            },
+            {
+              name: "Reminder Management: Schedule Gift",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Reminder Management: Schedule Gift",
+            },
+            {
+              name: "Navigation: Navigate to FAQ Section",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Navigation: Navigate to FAQ Section",
+            },
+            {
+              name: "FAQ Management: Explore FAQ Categories",
+              status: "PASSED",
+              duration: 55,
+              step_name: "FAQ Management: Explore FAQ Categories",
+            },
+            {
+              name: "Order Completion: Reminder and FAQ Flow Completed",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Order Completion: Reminder and FAQ Flow Completed",
+            },
+          ],
         },
         {
           name: "International Purchase",
@@ -383,7 +598,56 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Navigation: Navigate to International Section",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Navigation: Navigate to International Section",
+            },
+            {
+              name: "Location Setup: Select UAE as Destination",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Location Setup: Select UAE as Destination",
+            },
+            {
+              name: "Location Setup: Set International Delivery Location",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Location Setup: Set International Delivery Location",
+            },
+            {
+              name: "Product Selection: Select International Product",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Product Selection: Select International Product",
+            },
+            {
+              name: "Delivery Setup: Set International Delivery Date",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Delivery Setup: Set International Delivery Date",
+            },
+            {
+              name: "Cart Management: Add International Product to Cart",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Cart Management: Add International Product to Cart",
+            },
+            {
+              name: "Payment Process: Test International Payment",
+              status: "PASSED",
+              duration: 80,
+              step_name: "Payment Process: Test International Payment",
+            },
+            {
+              name: "Order Completion: International Purchase Completed",
+              status: "PASSED",
+              duration: 45,
+              step_name: "Order Completion: International Purchase Completed",
+            },
+          ],
         },
         {
           name: "Combinational Purchase",
@@ -391,7 +655,88 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "User Authentication: Navigate to Login Page",
+              status: "PASSED",
+              duration: 45,
+              step_name: "User Authentication: Navigate to Login Page",
+            },
+            {
+              name: "Product Selection: Navigate to Anniversary Product",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Product Selection: Navigate to Anniversary Product",
+            },
+            {
+              name: "Product Selection: Select Domestic Product",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Product Selection: Select Domestic Product",
+            },
+            {
+              name: "Delivery Setup: Set Domestic Delivery Date",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Delivery Setup: Set Domestic Delivery Date",
+            },
+            {
+              name: "Cart Management: Add Domestic Product to Cart",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Cart Management: Add Domestic Product to Cart",
+            },
+            {
+              name: "Navigation: Navigate to International Section",
+              status: "PASSED",
+              duration: 45,
+              step_name: "Navigation: Navigate to International Section",
+            },
+            {
+              name: "Location Setup: Select USA as Destination",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Location Setup: Select USA as Destination",
+            },
+            {
+              name: "Product Selection: Navigate to International Section",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Product Selection: Navigate to International Section",
+            },
+            {
+              name: "Product Selection: Select International Anniversary Product",
+              status: "PASSED",
+              duration: 60,
+              step_name:
+                "Product Selection: Select International Anniversary Product",
+            },
+            {
+              name: "Delivery Setup: Set International Delivery Date",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Delivery Setup: Set International Delivery Date",
+            },
+            {
+              name: "Cart Management: Add International Product and Checkout",
+              status: "PASSED",
+              duration: 75,
+              step_name:
+                "Cart Management: Add International Product and Checkout",
+            },
+            {
+              name: "Payment Process: Test Combinational Payment",
+              status: "PASSED",
+              duration: 80,
+              step_name: "Payment Process: Test Combinational Payment",
+            },
+            {
+              name: "Order Completion: Combinational Purchase Completed",
+              status: "PASSED",
+              duration: 45,
+              step_name: "Order Completion: Combinational Purchase Completed",
+            },
+          ],
         },
         {
           name: "Cake Variant Testing",
@@ -399,7 +744,50 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "User Authentication: Navigate to Login Page",
+              status: "PASSED",
+              duration: 45,
+              step_name: "User Authentication: Navigate to Login Page",
+            },
+            {
+              name: "Navigation: Navigate to Fudge Brownie Cake Product",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Navigation: Navigate to Fudge Brownie Cake Product",
+            },
+            {
+              name: "Delivery Setup: Set Cake Variant Delivery Date",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Delivery Setup: Set Cake Variant Delivery Date",
+            },
+            {
+              name: "Variant Testing: Change the Cake Variant",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Variant Testing: Change the Cake Variant",
+            },
+            {
+              name: "Payment Process: Proceed to Payment",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Payment Process: Proceed to Payment",
+            },
+            {
+              name: "Payment Process: Test QR Payment for Cake Variant",
+              status: "PASSED",
+              duration: 75,
+              step_name: "Payment Process: Test QR Payment for Cake Variant",
+            },
+            {
+              name: "Order Completion: Cake Variant Testing Completed",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Order Completion: Cake Variant Testing Completed",
+            },
+          ],
         },
         {
           name: "Invalid Coupon Testing",
@@ -407,7 +795,41 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "User Authentication: Navigate to Login Page",
+              status: "PASSED",
+              duration: 45,
+              step_name: "User Authentication: Navigate to Login Page",
+            },
+            {
+              name: "Navigation: Navigate to Chocolate Truffle Cake Product",
+              status: "PASSED",
+              duration: 55,
+              step_name:
+                "Navigation: Navigate to Chocolate Truffle Cake Product",
+            },
+            {
+              name: "Cart Management: Add Product to Cart",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Cart Management: Add Product to Cart",
+            },
+            {
+              name: "Coupon Testing: Apply Invalid Coupon Code (INVALID10)",
+              status: "PASSED",
+              duration: 50,
+              step_name:
+                "Coupon Testing: Apply Invalid Coupon Code (INVALID10)",
+            },
+            {
+              name: "Navigation: Navigate to Chocolate Truffle Cake Product",
+              status: "PASSED",
+              duration: 45,
+              step_name:
+                "Navigation: Navigate to Chocolate Truffle Cake Product",
+            },
+          ],
         },
         {
           name: "Valid Coupon Testing",
@@ -415,7 +837,38 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Coupon Testing: Apply Valid Coupon Code (GIFT10)",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Coupon Testing: Apply Valid Coupon Code (GIFT10)",
+            },
+            {
+              name: "Payment Process: Proceed to Payment",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Payment Process: Proceed to Payment",
+            },
+            {
+              name: "Payment Process: Test QR Payment Method",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Payment Process: Test QR Payment Method",
+            },
+            {
+              name: "Order Completion: Coupon Testing Completed",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Order Completion: Coupon Testing Completed",
+            },
+            {
+              name: "Navigation: Return to Homepage",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Navigation: Return to Homepage",
+            },
+          ],
         },
         {
           name: "Personalized Product Purchase",
@@ -423,7 +876,56 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Navigation: Navigate to Personalized Water Bottle",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Navigation: Navigate to Personalized Water Bottle",
+            },
+            {
+              name: 'Personalization: Add Custom Text "ASTHA SINGH"',
+              status: "PASSED",
+              duration: 70,
+              step_name: 'Personalization: Add Custom Text "ASTHA SINGH"',
+            },
+            {
+              name: "Cart Management: Add Personalized Product to Cart",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Cart Management: Add Personalized Product to Cart",
+            },
+            {
+              name: "Payment Process: Proceed to Payment Page",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Payment Process: Proceed to Payment Page",
+            },
+            {
+              name: "Payment Process: Test QR Payment Method",
+              status: "PASSED",
+              duration: 75,
+              step_name: "Payment Process: Test QR Payment Method",
+            },
+            {
+              name: "Navigation: Navigate Back to Homepage",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Navigation: Navigate Back to Homepage",
+            },
+            {
+              name: "Order Completion: Personalized Purchase Completed",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Order Completion: Personalized Purchase Completed",
+            },
+            {
+              name: "Navigation: Navigate Back to Homepage",
+              status: "PASSED",
+              duration: 30,
+              step_name: "Navigation: Navigate Back to Homepage",
+            },
+          ],
         },
         {
           name: "Message Card Integration",
@@ -431,7 +933,50 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Navigation: Navigate to Celebration Bento Cake",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Navigation: Navigate to Celebration Bento Cake",
+            },
+            {
+              name: "Delivery Setup: Set Delivery Date and Time",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Delivery Setup: Set Delivery Date and Time",
+            },
+            {
+              name: "Message Card: Add Free Message Card with Custom Text",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Message Card: Add Free Message Card with Custom Text",
+            },
+            {
+              name: "Payment Process: Proceed to Payment Page",
+              status: "PASSED",
+              duration: 65,
+              step_name: "Payment Process: Proceed to Payment Page",
+            },
+            {
+              name: "Payment Process: Test QR Payment Method",
+              status: "PASSED",
+              duration: 75,
+              step_name: "Payment Process: Test QR Payment Method",
+            },
+            {
+              name: "Navigation: Return to Homepage",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Navigation: Return to Homepage",
+            },
+            {
+              name: "Order Completion: Message Card Purchase Completed",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Order Completion: Message Card Purchase Completed",
+            },
+          ],
         },
         {
           name: "Product Exploration Journey",
@@ -439,7 +984,38 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Product Navigation: Navigate to Exotic Blue Orchid",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Product Navigation: Navigate to Exotic Blue Orchid",
+            },
+            {
+              name: "Photo Gallery: Open Main Product Image",
+              status: "PASSED",
+              duration: 45,
+              step_name: "Photo Gallery: Open Main Product Image",
+            },
+            {
+              name: "Product Details: Check Description & Instructions",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Product Details: Check Description & Instructions",
+            },
+            {
+              name: "Journey Step: I Navigate Back To Fnp Homepage",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Journey Step: I Navigate Back To Fnp Homepage",
+            },
+            {
+              name: "Order Completion: Product Exploration Completed",
+              status: "PASSED",
+              duration: 30,
+              step_name: "Order Completion: Product Exploration Completed",
+            },
+          ],
         },
         {
           name: "Same SKU Product Exploration",
@@ -447,7 +1023,39 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Product Navigation: Navigate to Jade Plant Product",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Product Navigation: Navigate to Jade Plant Product",
+            },
+            {
+              name: "Delivery Setup: Set Courier Delivery Date & Time Slot",
+              status: "PASSED",
+              duration: 65,
+              step_name:
+                "Delivery Setup: Set Courier Delivery Date & Time Slot",
+            },
+            {
+              name: "Cart Management: Add Product to Cart (Courier)",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Cart Management: Add Product to Cart (Courier)",
+            },
+            {
+              name: "Journey Step: I Navigate Back To Fnp Homepage",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Journey Step: I Navigate Back To Fnp Homepage",
+            },
+            {
+              name: "Order Completion: Same SKU Exploration Completed",
+              status: "PASSED",
+              duration: 30,
+              step_name: "Order Completion: Same SKU Exploration Completed",
+            },
+          ],
         },
         {
           name: "Search Based Purchase",
@@ -455,7 +1063,38 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: 'Search Function: Search for "cake" in Search Bar',
+              status: "PASSED",
+              duration: 45,
+              step_name: 'Search Function: Search for "cake" in Search Bar',
+            },
+            {
+              name: "Delivery Setup: Set Delivery Date & Time Slot",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Delivery Setup: Set Delivery Date & Time Slot",
+            },
+            {
+              name: "Cart Management: Add Search Product to Cart",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Cart Management: Add Search Product to Cart",
+            },
+            {
+              name: "Payment Process: Test QR Payment Method",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Payment Process: Test QR Payment Method",
+            },
+            {
+              name: "Order Completion: Search Based Purchase Completed",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Order Completion: Search Based Purchase Completed",
+            },
+          ],
         },
         {
           name: "Personalized Product with Upload 1 Photo Purchase",
@@ -463,7 +1102,38 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Navigation: Navigate to Personalized Cushion Product",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Navigation: Navigate to Personalized Cushion Product",
+            },
+            {
+              name: "Photo Upload: Upload Custom Photo from Local Path",
+              status: "PASSED",
+              duration: 80,
+              step_name: "Photo Upload: Upload Custom Photo from Local Path",
+            },
+            {
+              name: "Cart Management: Add Personalized Product to Cart",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Cart Management: Add Personalized Product to Cart",
+            },
+            {
+              name: "Payment Process: Test QR Payment Method",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Payment Process: Test QR Payment Method",
+            },
+            {
+              name: "Navigation: Navigate Back to Homepage",
+              status: "PASSED",
+              duration: 35,
+              step_name: "Navigation: Navigate Back to Homepage",
+            },
+          ],
         },
         {
           name: "Personalized Product with Upload 4 Photo Purchase",
@@ -471,7 +1141,46 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Navigation: Navigate to Fridge Magnet Product",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Navigation: Navigate to Fridge Magnet Product",
+            },
+            {
+              name: "Delivery Setup: Set Delivery Date (15th) & Time Slot (8-9 AM)",
+              status: "PASSED",
+              duration: 65,
+              step_name:
+                "Delivery Setup: Set Delivery Date (15th) & Time Slot (8-9 AM)",
+            },
+            {
+              name: "Photo Upload: Upload 4 Custom Photos (photo1-4.jpg)",
+              status: "PASSED",
+              duration: 90,
+              step_name: "Photo Upload: Upload 4 Custom Photos (photo1-4.jpg)",
+            },
+            {
+              name: "Cart Management: Add Fridge Magnet to Cart",
+              status: "PASSED",
+              duration: 60,
+              step_name: "Cart Management: Add Fridge Magnet to Cart",
+            },
+            {
+              name: "Payment Process: Test QR Payment Method",
+              status: "PASSED",
+              duration: 70,
+              step_name: "Payment Process: Test QR Payment Method",
+            },
+            {
+              name: "Order Completion: Multi-Photo Upload Journey Completed",
+              status: "PASSED",
+              duration: 45,
+              step_name:
+                "Order Completion: Multi-Photo Upload Journey Completed",
+            },
+          ],
         },
         {
           name: "Location Testing",
@@ -479,7 +1188,66 @@ function generateMockTestResults() {
           failed: 0,
           duration: 0.5,
           status: "PASSED",
-          steps: [],
+          steps: [
+            {
+              name: "Navigation: Navigate to Homepage for Location Journey",
+              status: "PASSED",
+              duration: 40,
+              step_name:
+                "Navigation: Navigate to Homepage for Location Journey",
+            },
+            {
+              name: "Location Change: Select New Pincode Gurgaon",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Location Change: Select New Pincode Gurgaon",
+            },
+            {
+              name: "Location Change: Select Delhi Location",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Location Change: Select Delhi Location",
+            },
+            {
+              name: "Navigation: Navigate to PLP and Select Existing Bangalore Pincode",
+              status: "PASSED",
+              duration: 60,
+              step_name:
+                "Navigation: Navigate to PLP and Select Existing Bangalore Pincode",
+            },
+            {
+              name: "Location Change: Select Gorakhpur Pincode",
+              status: "PASSED",
+              duration: 55,
+              step_name: "Location Change: Select Gorakhpur Pincode",
+            },
+            {
+              name: "Location Change: Select Final Bangalore Location",
+              status: "PASSED",
+              duration: 50,
+              step_name: "Location Change: Select Final Bangalore Location",
+            },
+            {
+              name: "Navigation: Return to Homepage After Location Testing",
+              status: "PASSED",
+              duration: 35,
+              step_name:
+                "Navigation: Return to Homepage After Location Testing",
+            },
+            {
+              name: "Order Completion: Location Testing Completed",
+              status: "PASSED",
+              duration: 40,
+              step_name: "Order Completion: Location Testing Completed",
+            },
+            {
+              name: "Navigation: Navigate to Homepage for Icon Exploration",
+              status: "PASSED",
+              duration: 30,
+              step_name:
+                "Navigation: Navigate to Homepage for Icon Exploration",
+            },
+          ],
         },
       ],
     },
