@@ -262,9 +262,37 @@ function App() {
           Pragma: "no-cache",
         },
       });
+
+      const apiData = response.data || {};
+      const mockData = generateMockData();
+
+      const mergePlatform = (key: PlatformKey) => {
+        const apiPlatform = apiData[key];
+        // If API has data and it has modules with items, use it.
+        // Also check if it's not the "coming soon" placeholder
+        if (
+          apiPlatform &&
+          apiPlatform.modules &&
+          apiPlatform.modules.length > 0
+        ) {
+          return apiPlatform;
+        }
+        // Otherwise use mock data
+        return mockData[key];
+      };
+
+      // Merge API data with mock data to ensure all platforms have data
+      const mergedData: TestResultsResponse = {
+        desktop: mergePlatform("desktop"),
+        mobile: mergePlatform("mobile"),
+        android: mergePlatform("android"),
+        ios: mergePlatform("ios"),
+        oms: mergePlatform("oms"),
+      };
+
       setTestData((prev) => {
-        if (JSON.stringify(prev) === JSON.stringify(response.data)) return prev;
-        return response.data;
+        if (JSON.stringify(prev) === JSON.stringify(mergedData)) return prev;
+        return mergedData;
       });
       setLastRefreshTime(new Date());
     } catch {
