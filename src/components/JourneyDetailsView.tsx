@@ -66,10 +66,7 @@ const DESKTOP_JOURNEYS: Journey[] = [
     name: "International Phone Number Change",
     steps: [
       { category: "Profile Management", action: "Navigate to Profile Page" },
-      {
-        category: "Profile Management",
-        action: "Change International Phone Number",
-      },
+      { category: "Profile Management", action: "Change International Phone Number" },
       { category: "Navigation", action: "Return to Homepage" },
       { category: "Product Discovery", action: "Navigate to Wedding Section" },
       { category: "Delivery Setup", action: "Set Wedding Delivery Date" },
@@ -90,10 +87,7 @@ const DESKTOP_JOURNEYS: Journey[] = [
       { category: "Reminder Management", action: "Schedule Gift" },
       { category: "Navigation", action: "Navigate to FAQ Section" },
       { category: "FAQ Management", action: "Explore FAQ Categories" },
-      {
-        category: "Order Completion",
-        action: "Reminder and FAQ Flow Completed",
-      },
+      { category: "Order Completion", action: "Reminder and FAQ Flow Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -105,21 +99,12 @@ const DESKTOP_JOURNEYS: Journey[] = [
     steps: [
       { category: "Navigation", action: "Navigate to International Section" },
       { category: "Location Setup", action: "Select UAE as Destination" },
-      {
-        category: "Location Setup",
-        action: "Set International Delivery Location",
-      },
+      { category: "Location Setup", action: "Set International Delivery Location" },
       { category: "Product Selection", action: "Select International Product" },
       { category: "Delivery Setup", action: "Set International Delivery Date" },
-      {
-        category: "Cart Management",
-        action: "Add International Product to Cart",
-      },
+      { category: "Cart Management", action: "Add International Product to Cart" },
       { category: "Payment Process", action: "Test International Payment" },
-      {
-        category: "Order Completion",
-        action: "International Purchase Completed",
-      },
+      { category: "Order Completion", action: "International Purchase Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -130,33 +115,18 @@ const DESKTOP_JOURNEYS: Journey[] = [
     name: "Combinational Purchase",
     steps: [
       { category: "User Authentication", action: "Navigate to Login Page" },
-      {
-        category: "Product Selection",
-        action: "Navigate to Anniversary Product",
-      },
+      { category: "Product Selection", action: "Navigate to Anniversary Product" },
       { category: "Product Selection", action: "Select Domestic Product" },
       { category: "Delivery Setup", action: "Set Domestic Delivery Date" },
       { category: "Cart Management", action: "Add Domestic Product to Cart" },
       { category: "Navigation", action: "Navigate to International Section" },
       { category: "Location Setup", action: "Select USA as Destination" },
-      {
-        category: "Product Selection",
-        action: "Navigate to International Section",
-      },
-      {
-        category: "Product Selection",
-        action: "Select International Anniversary Product",
-      },
+      { category: "Product Selection", action: "Navigate to International Section" },
+      { category: "Product Selection", action: "Select International Anniversary Product" },
       { category: "Delivery Setup", action: "Set International Delivery Date" },
-      {
-        category: "Cart Management",
-        action: "Add International Product and Checkout",
-      },
+      { category: "Cart Management", action: "Add International Product and Checkout" },
       { category: "Payment Process", action: "Test Combinational Payment" },
-      {
-        category: "Order Completion",
-        action: "Combinational Purchase Completed",
-      },
+      { category: "Order Completion", action: "Combinational Purchase Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -167,21 +137,12 @@ const DESKTOP_JOURNEYS: Journey[] = [
     name: "Cake Variant Testing",
     steps: [
       { category: "User Authentication", action: "Navigate to Login Page" },
-      {
-        category: "Navigation",
-        action: "Navigate to Fudge Brownie Cake Product",
-      },
+      { category: "Navigation", action: "Navigate to Fudge Brownie Cake Product" },
       { category: "Delivery Setup", action: "Set Cake Variant Delivery Date" },
       { category: "Variant Testing", action: "Change the Cake Variant" },
       { category: "Payment Process", action: "Proceed to Payment" },
-      {
-        category: "Payment Process",
-        action: "Test QR Payment for Cake Variant",
-      },
-      {
-        category: "Order Completion",
-        action: "Cake Variant Testing Completed",
-      },
+      { category: "Payment Process", action: "Test QR Payment for Cake Variant" },
+      { category: "Order Completion", action: "Cake Variant Testing Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -192,19 +153,10 @@ const DESKTOP_JOURNEYS: Journey[] = [
     name: "Invalid Coupon Testing",
     steps: [
       { category: "User Authentication", action: "Navigate to Login Page" },
-      {
-        category: "Navigation",
-        action: "Navigate to Chocolate Truffle Cake Product",
-      },
+      { category: "Navigation", action: "Navigate to Chocolate Truffle Cake Product" },
       { category: "Cart Management", action: "Add Product to Cart" },
-      {
-        category: "Coupon Testing",
-        action: "Apply Invalid Coupon Code (INVALID10)",
-      },
-      {
-        category: "Navigation",
-        action: "Navigate to Chocolate Truffle Cake Product",
-      },
+      { category: "Coupon Testing", action: "Apply Invalid Coupon Code (INVALID10)" },
+      { category: "Navigation", action: "Navigate to Chocolate Truffle Cake Product" },
     ],
     status: "PASSED",
     passed: 1,
@@ -214,10 +166,7 @@ const DESKTOP_JOURNEYS: Journey[] = [
     id: 11,
     name: "Valid Coupon Testing",
     steps: [
-      {
-        category: "Coupon Testing",
-        action: "Apply Valid Coupon Code (GIFT10)",
-      },
+      { category: "Coupon Testing", action: "Apply Valid Coupon Code (GIFT10)" },
       { category: "Payment Process", action: "Proceed to Payment" },
       { category: "Payment Process", action: "Test QR Payment Method" },
       { category: "Order Completion", action: "Coupon Testing Completed" },
@@ -231,22 +180,13 @@ const DESKTOP_JOURNEYS: Journey[] = [
     id: 12,
     name: "Personalized Product Purchase",
     steps: [
-      {
-        category: "Navigation",
-        action: "Navigate to Personalized Water Bottle",
-      },
-      { category: "Personalization", action: 'Add Custom Text "ASTHA SINGH"' },
-      {
-        category: "Cart Management",
-        action: "Add Personalized Product to Cart",
-      },
+      { category: "Navigation", action: "Navigate to Personalized Water Bottle" },
+      { category: "Personalization", action: "Add Custom Text \"ASTHA SINGH\"" },
+      { category: "Cart Management", action: "Add Personalized Product to Cart" },
       { category: "Payment Process", action: "Proceed to Payment Page" },
       { category: "Payment Process", action: "Test QR Payment Method" },
       { category: "Navigation", action: "Navigate Back to Homepage" },
-      {
-        category: "Order Completion",
-        action: "Personalized Purchase Completed",
-      },
+      { category: "Order Completion", action: "Personalized Purchase Completed" },
       { category: "Navigation", action: "Navigate Back to Homepage" },
     ],
     status: "PASSED",
@@ -259,17 +199,11 @@ const DESKTOP_JOURNEYS: Journey[] = [
     steps: [
       { category: "Navigation", action: "Navigate to Celebration Bento Cake" },
       { category: "Delivery Setup", action: "Set Delivery Date and Time" },
-      {
-        category: "Message Card",
-        action: "Add Free Message Card with Custom Text",
-      },
+      { category: "Message Card", action: "Add Free Message Card with Custom Text" },
       { category: "Payment Process", action: "Proceed to Payment Page" },
       { category: "Payment Process", action: "Test QR Payment Method" },
       { category: "Navigation", action: "Return to Homepage" },
-      {
-        category: "Order Completion",
-        action: "Message Card Purchase Completed",
-      },
+      { category: "Order Completion", action: "Message Card Purchase Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -279,15 +213,9 @@ const DESKTOP_JOURNEYS: Journey[] = [
     id: 14,
     name: "Product Exploration Journey",
     steps: [
-      {
-        category: "Product Navigation",
-        action: "Navigate to Exotic Blue Orchid",
-      },
+      { category: "Product Navigation", action: "Navigate to Exotic Blue Orchid" },
       { category: "Photo Gallery", action: "Open Main Product Image" },
-      {
-        category: "Product Details",
-        action: "Check Description & Instructions",
-      },
+      { category: "Product Details", action: "Check Description & Instructions" },
       { category: "Journey Step", action: "I Navigate Back To Fnp Homepage" },
       { category: "Order Completion", action: "Product Exploration Completed" },
     ],
@@ -299,20 +227,11 @@ const DESKTOP_JOURNEYS: Journey[] = [
     id: 15,
     name: "Same SKU Product Exploration",
     steps: [
-      {
-        category: "Product Navigation",
-        action: "Navigate to Jade Plant Product",
-      },
-      {
-        category: "Delivery Setup",
-        action: "Set Courier Delivery Date & Time Slot",
-      },
+      { category: "Product Navigation", action: "Navigate to Jade Plant Product" },
+      { category: "Delivery Setup", action: "Set Courier Delivery Date & Time Slot" },
       { category: "Cart Management", action: "Add Product to Cart (Courier)" },
       { category: "Journey Step", action: "I Navigate Back To Fnp Homepage" },
-      {
-        category: "Order Completion",
-        action: "Same SKU Exploration Completed",
-      },
+      { category: "Order Completion", action: "Same SKU Exploration Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -322,17 +241,11 @@ const DESKTOP_JOURNEYS: Journey[] = [
     id: 16,
     name: "Search Based Purchase",
     steps: [
-      {
-        category: "Search Function",
-        action: 'Search for "cake" in Search Bar',
-      },
+      { category: "Search Function", action: "Search for \"cake\" in Search Bar" },
       { category: "Delivery Setup", action: "Set Delivery Date & Time Slot" },
       { category: "Cart Management", action: "Add Search Product to Cart" },
       { category: "Payment Process", action: "Test QR Payment Method" },
-      {
-        category: "Order Completion",
-        action: "Search Based Purchase Completed",
-      },
+      { category: "Order Completion", action: "Search Based Purchase Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -342,18 +255,9 @@ const DESKTOP_JOURNEYS: Journey[] = [
     id: 17,
     name: "Personalized Product with Upload 1 Photo Purchase",
     steps: [
-      {
-        category: "Navigation",
-        action: "Navigate to Personalized Cushion Product",
-      },
-      {
-        category: "Photo Upload",
-        action: "Upload Custom Photo from Local Path",
-      },
-      {
-        category: "Cart Management",
-        action: "Add Personalized Product to Cart",
-      },
+      { category: "Navigation", action: "Navigate to Personalized Cushion Product" },
+      { category: "Photo Upload", action: "Upload Custom Photo from Local Path" },
+      { category: "Cart Management", action: "Add Personalized Product to Cart" },
       { category: "Payment Process", action: "Test QR Payment Method" },
       { category: "Navigation", action: "Navigate Back to Homepage" },
     ],
@@ -366,20 +270,11 @@ const DESKTOP_JOURNEYS: Journey[] = [
     name: "Personalized Product with Upload 4 Photo Purchase",
     steps: [
       { category: "Navigation", action: "Navigate to Fridge Magnet Product" },
-      {
-        category: "Delivery Setup",
-        action: "Set Delivery Date (15th) & Time Slot (8-9 AM)",
-      },
-      {
-        category: "Photo Upload",
-        action: "Upload 4 Custom Photos (photo1-4.jpg)",
-      },
+      { category: "Delivery Setup", action: "Set Delivery Date (15th) & Time Slot (8-9 AM)" },
+      { category: "Photo Upload", action: "Upload 4 Custom Photos (photo1-4.jpg)" },
       { category: "Cart Management", action: "Add Fridge Magnet to Cart" },
       { category: "Payment Process", action: "Test QR Payment Method" },
-      {
-        category: "Order Completion",
-        action: "Multi-Photo Upload Journey Completed",
-      },
+      { category: "Order Completion", action: "Multi-Photo Upload Journey Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -389,30 +284,15 @@ const DESKTOP_JOURNEYS: Journey[] = [
     id: 19,
     name: "Location Testing",
     steps: [
-      {
-        category: "Navigation",
-        action: "Navigate to Homepage for Location Journey",
-      },
+      { category: "Navigation", action: "Navigate to Homepage for Location Journey" },
       { category: "Location Change", action: "Select New Pincode Gurgaon" },
       { category: "Location Change", action: "Select Delhi Location" },
-      {
-        category: "Navigation",
-        action: "Navigate to PLP and Select Existing Bangalore Pincode",
-      },
+      { category: "Navigation", action: "Navigate to PLP and Select Existing Bangalore Pincode" },
       { category: "Location Change", action: "Select Gorakhpur Pincode" },
-      {
-        category: "Location Change",
-        action: "Select Final Bangalore Location",
-      },
-      {
-        category: "Navigation",
-        action: "Return to Homepage After Location Testing",
-      },
+      { category: "Location Change", action: "Select Final Bangalore Location" },
+      { category: "Navigation", action: "Return to Homepage After Location Testing" },
       { category: "Order Completion", action: "Location Testing Completed" },
-      {
-        category: "Navigation",
-        action: "Navigate to Homepage for Icon Exploration",
-      },
+      { category: "Navigation", action: "Navigate to Homepage for Icon Exploration" },
     ],
     status: "PASSED",
     passed: 1,
@@ -423,10 +303,7 @@ const DESKTOP_JOURNEYS: Journey[] = [
     name: "Spherical Home Page Icon Exploration",
     steps: [
       { category: "Category Navigation", action: "Explore Spherical Icons" },
-      {
-        category: "Order Completion",
-        action: "Spherical Icon Exploration Completed",
-      },
+      { category: "Order Completion", action: "Spherical Icon Exploration Completed" },
     ],
     status: "PASSED",
     passed: 1,
@@ -441,10 +318,7 @@ const DESKTOP_JOURNEYS: Journey[] = [
       { category: "Gmail OTP Journey", action: "Open Account Drawer" },
       { category: "Gmail OTP Journey", action: "Perform Gmail OTP Login" },
       { category: "Gmail OTP Journey", action: "Verify Login Success" },
-      {
-        category: "Order Completion",
-        action: "All Journeys Completed Successfully",
-      },
+      { category: "Order Completion", action: "All Journeys Completed Successfully" },
     ],
     status: "PASSED",
     passed: 1,
@@ -452,7 +326,7 @@ const DESKTOP_JOURNEYS: Journey[] = [
   },
 ];
 
-import { MOBILE_JOURNEYS } from "../data/mockJourneys";
+const MOBILE_JOURNEYS: Journey[] = [];
 
 const OMS_JOURNEYS: Journey[] = [
   {
@@ -585,16 +459,8 @@ const PARTNER_PANEL_JOURNEYS: Journey[] = [
       { category: "Delivery Tracking", action: "Today", duration_ms: 162 },
       { category: "Delivery Tracking", action: "Tomorrow", duration_ms: 249 },
       { category: "Delivery Tracking", action: "Future", duration_ms: 249 },
-      {
-        category: "Delivery Status",
-        action: "Out for delivery/Ready for",
-        duration_ms: 159,
-      },
-      {
-        category: "Delivery Status",
-        action: "Delivery Attempted",
-        duration_ms: 240,
-      },
+      { category: "Delivery Status", action: "Out for delivery/Ready for", duration_ms: 159 },
+      { category: "Delivery Status", action: "Delivery Attempted", duration_ms: 240 },
       { category: "Delivery Status", action: "Delivered", duration_ms: 236 },
     ],
   },
@@ -622,6 +488,11 @@ export function JourneyDetailsView({
   };
 
   const getJourneyData = (plat: PlatformType): Journey[] => {
+    // For mobile platform, always return empty array (no data display)
+    if (plat === "mobile") {
+      return [];
+    }
+
     // Use real data from Supabase if available, otherwise fall back to mock data
     if (testData && testData[plat] && testData[plat].modules) {
       return testData[plat].modules.map((module: any, index: number) => ({
