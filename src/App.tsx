@@ -405,7 +405,6 @@ function App() {
           <div class="card-content">
             <div class="automation-info">FNP Desktop Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">WEB</span></div>
-            <div class="summary-info">Summary: <span class="summary-value">${desktop.total} user journeys completed</span></div>
             <div class="journeys-info">User Journeys: <span class="journeys-value">${desktop.total}</span></div>
             <div class="steps-info">Test Steps: <span class="steps-value">17</span></div>
             <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
