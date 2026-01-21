@@ -151,8 +151,8 @@ function App() {
 
   function generateMockData(): TestResultsResponse {
     // Real test data from December 19th, 6 PM - 17 journeys with 100% success
-    const dec19TestDate = new Date('2024-12-19T18:00:00').toISOString();
-    
+    const dec19TestDate = new Date("2024-12-19T18:00:00").toISOString();
+
     return {
       desktop: {
         total: 17,
@@ -162,23 +162,125 @@ function App() {
         duration: 9, // 9ms total execution as mentioned
         lastRun: dec19TestDate,
         modules: [
-          { name: "Home Page Exploration", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Payment Methods Testing", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "International Phone Number Change", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Reminder and FAQ Testing", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "International Purchase", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Combinational Purchase", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Cake Variant Testing", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Invalid Coupon Testing", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Valid Coupon Testing", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Personalized Product Purchase", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Message Card Integration", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Product Exploration Journey", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Same SKU Product Exploration", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Search Based Purchase", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Personalized Product with Upload 1 Photo Purchase", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Personalized Product with Upload 4 Photo Purchase", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
-          { name: "Location Testing", passed: 1, failed: 0, duration: 0.5, status: "PASSED" },
+          {
+            name: "Home Page Exploration",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Payment Methods Testing",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "International Phone Number Change",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Reminder and FAQ Testing",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "International Purchase",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Combinational Purchase",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Cake Variant Testing",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Invalid Coupon Testing",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Valid Coupon Testing",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Personalized Product Purchase",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Message Card Integration",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Product Exploration Journey",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Same SKU Product Exploration",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Search Based Purchase",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Personalized Product with Upload 1 Photo Purchase",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Personalized Product with Upload 4 Photo Purchase",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
+          {
+            name: "Location Testing",
+            passed: 1,
+            failed: 0,
+            duration: 0.5,
+            status: "PASSED",
+          },
         ],
       },
       mobile: {
@@ -274,20 +376,25 @@ function App() {
         desktop.total > 0
           ? Math.round((desktop.passed / desktop.total) * 100)
           : 0;
-      const avgTime = desktop.total > 0 ? (desktop.duration / desktop.total).toFixed(3) : "0.000";
+      const avgTime =
+        desktop.total > 0
+          ? (desktop.duration / desktop.total).toFixed(3)
+          : "0.000";
       const status = desktop.failed > 0 ? "ISSUES DETECTED" : "ALL SYSTEMS GO";
       const statusClass =
         desktop.failed > 0 ? "status-error" : "status-success";
 
       // Format the execution date properly
-      const executionDate = desktop.lastRun ? new Date(desktop.lastRun).toLocaleString('en-US', {
-        year: 'numeric',
-        month: 'short', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      }) : "Unknown";
+      const executionDate = desktop.lastRun
+        ? new Date(desktop.lastRun).toLocaleString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          })
+        : "Unknown";
 
       cards.push(`
         <div class="detailed-stat-card desktop-border">
@@ -296,14 +403,14 @@ function App() {
             <div class="card-title">Desktop Site</div>
           </div>
           <div class="card-content">
-            <div class="automation-info">FNP Automation - ALL TESTS PASSED!</div>
-            <div class="suite-info">Suite: FNP Automation Framework - Playwright Test Suite</div>
+            <div class="automation-info">FNP Desktop Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">WEB</span></div>
             <div class="summary-info">Summary: <span class="summary-value">${desktop.total} user journeys completed</span></div>
             <div class="journeys-info">User Journeys: <span class="journeys-value">${desktop.total}</span></div>
+            <div class="steps-info">Test Steps: <span class="steps-value">17</span></div>
             <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
-            <div class="avg-time-info">Avg Journey Time: <span class="time-value">${avgTime}ms</span></div>
-            <div class="failed-info">Failed Journeys: <span class="failed-value">${desktop.failed}</span></div>
+            <div class="avg-time-info">Avg Step Time: <span class="time-value">${avgTime}ms</span></div>
+            <div class="failed-info">Failed Steps: <span class="failed-value">${desktop.failed}</span></div>
           </div>
           <div class="card-status ${statusClass}">Status: ${status} ${desktop.failed > 0 ? "⚠" : "✓"}</div>
         </div>
