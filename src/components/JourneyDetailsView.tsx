@@ -29,17 +29,27 @@ export function JourneyDetailsView({
   };
 
   const getJourneyData = (plat: PlatformType): Journey[] => {
+    // Map internal platform names to API response keys
+    // 'partner' in UI maps to 'android' in API response (legacy naming)
+    const apiPlatformKey = plat === "partner" ? "android" : plat;
+
     // Use real data from Supabase if available, otherwise fall back to mock data
-    if (testData && testData[plat] && testData[plat].modules) {
-      return testData[plat].modules.map((module: any, index: number) => ({
-        id: index + 1,
-        name: module.name || `Journey ${index + 1}`,
-        status: module.status || (module.failed > 0 ? "FAILED" : "PASSED"),
-        passed: module.passed || 0,
-        failed: module.failed || 0,
-        duration: module.duration || 0,
-        steps: module.steps || [],
-      }));
+    if (
+      testData &&
+      testData[apiPlatformKey] &&
+      testData[apiPlatformKey].modules
+    ) {
+      return testData[apiPlatformKey].modules.map(
+        (module: any, index: number) => ({
+          id: index + 1,
+          name: module.name || `Journey ${index + 1}`,
+          status: module.status || (module.failed > 0 ? "FAILED" : "PASSED"),
+          passed: module.passed || 0,
+          failed: module.failed || 0,
+          duration: module.duration || 0,
+          steps: module.steps || [],
+        }),
+      );
     }
 
     // Fallback to mock data
