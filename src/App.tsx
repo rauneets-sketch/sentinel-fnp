@@ -155,7 +155,10 @@ function App() {
   }, [lastRefreshTime]);
 
   function generateMockData(): TestResultsResponse {
-    const processJourneys = (journeys: typeof DESKTOP_JOURNEYS) => {
+    const processJourneys = (
+      journeys: typeof DESKTOP_JOURNEYS,
+      platform?: string,
+    ) => {
       const modules = journeys.map((j) => ({
         name: j.name,
         passed: j.passed || 0,
@@ -182,20 +185,37 @@ function App() {
 
       const duration = journeys.reduce((acc, j) => acc + (j.duration || 0), 0);
 
+      // For OMS and Partner Panel, show only 1 journey but keep correct step counts
+      let processedModules = modules;
+      if (platform === "oms" || platform === "partner") {
+        processedModules = [
+          {
+            name:
+              platform === "oms"
+                ? "OMS Complete Workflow"
+                : "Partner Panel Complete Workflow",
+            passed: passed,
+            failed: failed,
+            duration: duration,
+            steps: journeys.flatMap((j) => j.steps || []),
+          },
+        ];
+      }
+
       return {
         total,
         passed,
         failed,
         skipped: 0,
         duration,
-        modules,
+        modules: processedModules,
       };
     };
 
     const desktopData = processJourneys(DESKTOP_JOURNEYS);
     const mobileData = processJourneys(MOBILE_JOURNEYS);
-    const omsData = processJourneys(OMS_JOURNEYS);
-    const partnerData = processJourneys(PARTNER_PANEL_JOURNEYS);
+    const omsData = processJourneys(OMS_JOURNEYS, "oms");
+    const partnerData = processJourneys(PARTNER_PANEL_JOURNEYS, "partner");
 
     // Debug logging to verify counts
     console.log("🔍 Mock Data Debug:");
