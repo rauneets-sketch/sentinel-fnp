@@ -197,6 +197,29 @@ function App() {
     const omsData = processJourneys(OMS_JOURNEYS);
     const partnerData = processJourneys(PARTNER_PANEL_JOURNEYS);
 
+    // Debug logging to verify counts
+    console.log("🔍 Mock Data Debug:");
+    console.log("Desktop:", {
+      journeys: DESKTOP_JOURNEYS.length,
+      steps: desktopData.total,
+      modules: desktopData.modules.length,
+    });
+    console.log("Mobile:", {
+      journeys: MOBILE_JOURNEYS.length,
+      steps: mobileData.total,
+      modules: mobileData.modules.length,
+    });
+    console.log("OMS:", {
+      journeys: OMS_JOURNEYS.length,
+      steps: omsData.total,
+      modules: omsData.modules.length,
+    });
+    console.log("Partner:", {
+      journeys: PARTNER_PANEL_JOURNEYS.length,
+      steps: partnerData.total,
+      modules: partnerData.modules.length,
+    });
+
     return {
       desktop: {
         total: desktopData.total,
