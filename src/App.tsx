@@ -174,14 +174,18 @@ function App() {
       );
 
       const passed = journeys.reduce((acc, j) => {
-        // If journey passed, assume all steps passed unless specific counts exist
-        if (j.status === "PASSED" || j.passed === 1) {
-          return acc + (j.steps?.length || 0);
-        }
-        return acc + (j.passed || 0);
+        // Count passed steps from the steps array
+        const passedSteps =
+          j.steps?.filter((step) => step.status === "PASSED").length || 0;
+        return acc + passedSteps;
       }, 0);
 
-      const failed = total - passed; // Simplified for mock data consistency
+      const failed = journeys.reduce((acc, j) => {
+        // Count failed steps from the steps array
+        const failedSteps =
+          j.steps?.filter((step) => step.status === "FAILED").length || 0;
+        return acc + failedSteps;
+      }, 0);
 
       const duration = journeys.reduce((acc, j) => acc + (j.duration || 0), 0);
 
