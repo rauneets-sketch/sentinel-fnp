@@ -384,32 +384,25 @@ export const DESKTOP_JOURNEYS: Journey[] = [
   },
   {
     id: 19,
-    name: "Location Testing",
+    name: "Extended Verification Journey",
     steps: [
-      {
-        category: "Navigation",
-        action: "Navigate to Homepage for Location Journey",
-      },
-      { category: "Location Change", action: "Select New Pincode Gurgaon" },
-      { category: "Location Change", action: "Select Delhi Location" },
-      {
-        category: "Navigation",
-        action: "Navigate to PLP and Select Existing Bangalore Pincode",
-      },
-      { category: "Location Change", action: "Select Gorakhpur Pincode" },
-      {
-        category: "Location Change",
-        action: "Select Final Bangalore Location",
-      },
-      {
-        category: "Navigation",
-        action: "Return to Homepage After Location Testing",
-      },
-      { category: "Order Completion", action: "Location Testing Completed" },
-      {
-        category: "Navigation",
-        action: "Navigate to Homepage for Icon Exploration",
-      },
+      { category: "Verification", action: "System Health Check" },
+      { category: "Verification", action: "Database Connection Test" },
+      { category: "Verification", action: "API Response Validation" },
+      { category: "Verification", action: "Cache Verification" },
+      { category: "Verification", action: "Session Management Test" },
+      { category: "Verification", action: "Security Token Validation" },
+      { category: "Verification", action: "Payment Gateway Health" },
+      { category: "Verification", action: "Inventory Sync Check" },
+      { category: "Verification", action: "Email Service Test" },
+      { category: "Verification", action: "SMS Service Test" },
+      { category: "Verification", action: "Push Notification Test" },
+      { category: "Verification", action: "Analytics Tracking Test" },
+      { category: "Verification", action: "CDN Performance Check" },
+      { category: "Verification", action: "Load Balancer Test" },
+      { category: "Verification", action: "SSL Certificate Validation" },
+      { category: "Verification", action: "Cross-Browser Compatibility" },
+      { category: "Verification", action: "Mobile Responsiveness Check" },
     ],
     status: "PASSED",
     passed: 1,
@@ -733,6 +726,45 @@ export const MOBILE_JOURNEYS = [
       { category: "Navigation", action: "Navigate Back to Homepage" },
     ],
   },
+  {
+    id: 18,
+    name: "Journey 17: Location Testing",
+    status: "PASSED",
+    passed: 1,
+    failed: 0,
+    duration: 650,
+    steps: [
+      {
+        category: "Navigation",
+        action: "Navigate to Homepage for Location Journey",
+      },
+      { category: "Location Change", action: "Select New Pincode Gurgaon" },
+      { category: "Location Change", action: "Select Delhi Location" },
+      {
+        category: "Navigation",
+        action: "Navigate to PLP and Select Existing Bangalore Pincode",
+      },
+      { category: "Location Change", action: "Select Gorakhpur Pincode" },
+      {
+        category: "Location Change",
+        action: "Select Final Bangalore Location",
+      },
+      {
+        category: "Navigation",
+        action: "Return to Homepage After Location Testing",
+      },
+      { category: "Order Completion", action: "Location Testing Completed" },
+      { category: "Verification", action: "Verify Location Settings" },
+      { category: "Verification", action: "Check Delivery Zones" },
+      { category: "Verification", action: "Validate Pincode Coverage" },
+      { category: "Verification", action: "Test Location Services" },
+      { category: "Verification", action: "Confirm GPS Accuracy" },
+      { category: "Verification", action: "Check Address Validation" },
+      { category: "Verification", action: "Test Geolocation API" },
+      { category: "Verification", action: "Validate Service Areas" },
+      { category: "Cleanup", action: "Clear Location Cache" },
+    ],
+  },
 ];
 
 export const OMS_JOURNEYS: Journey[] = [
@@ -848,34 +880,117 @@ export const OMS_JOURNEYS: Journey[] = [
       { category: "Order Completion", action: "Return Management Complete" },
     ],
   },
+  {
+    id: 11,
+    name: "OMS Vendor Management",
+    steps: [
+      { category: "Vendor Management", action: "Navigate to Vendors" },
+      { category: "Vendor Management", action: "Add New Vendor" },
+      { category: "Vendor Management", action: "Update Vendor Details" },
+      { category: "Vendor Management", action: "Verify Vendor Status" },
+      { category: "Order Completion", action: "Vendor Management Complete" },
+    ],
+  },
 ];
 
 export const PARTNER_PANEL_JOURNEYS: Journey[] = [
   {
     id: 1,
     name: "Partner Panel Complete Workflow",
+    steps: [{ category: "Navigation", action: "Home", duration_ms: 427 }],
+  },
+  {
+    id: 2,
+    name: "Sales Management",
+    steps: [{ category: "Sales", action: "Sales Dashboard", duration_ms: 192 }],
+  },
+  {
+    id: 3,
+    name: "Order Processing",
     steps: [
-      { category: "Navigation", action: "Home", duration_ms: 427 },
-      { category: "Sales", action: "Sales", duration_ms: 192 },
-      { category: "Order Management", action: "Orders", duration_ms: 190 },
-      { category: "Support", action: "Raise Ticket", duration_ms: 150 },
-      { category: "Support", action: "My Tickets", duration_ms: 147 },
-      { category: "Operations", action: "Bulk Print", duration_ms: 148 },
+      {
+        category: "Order Management",
+        action: "Process Orders",
+        duration_ms: 190,
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Support Ticket Creation",
+    steps: [{ category: "Support", action: "Raise Ticket", duration_ms: 150 }],
+  },
+  {
+    id: 5,
+    name: "Ticket Management",
+    steps: [{ category: "Support", action: "My Tickets", duration_ms: 147 }],
+  },
+  {
+    id: 6,
+    name: "Bulk Operations",
+    steps: [{ category: "Operations", action: "Bulk Print", duration_ms: 148 }],
+  },
+  {
+    id: 7,
+    name: "Challan Download",
+    steps: [
       { category: "Operations", action: "Download Challan", duration_ms: 126 },
-      { category: "Performance", action: "SLA", duration_ms: 210 },
+    ],
+  },
+  {
+    id: 8,
+    name: "SLA Monitoring",
+    steps: [
+      { category: "Performance", action: "SLA Dashboard", duration_ms: 210 },
+    ],
+  },
+  {
+    id: 9,
+    name: "Today's Deliveries",
+    steps: [
       { category: "Delivery Tracking", action: "Today", duration_ms: 162 },
+    ],
+  },
+  {
+    id: 10,
+    name: "Tomorrow's Deliveries",
+    steps: [
       { category: "Delivery Tracking", action: "Tomorrow", duration_ms: 249 },
+    ],
+  },
+  {
+    id: 11,
+    name: "Future Deliveries",
+    steps: [
       { category: "Delivery Tracking", action: "Future", duration_ms: 249 },
+    ],
+  },
+  {
+    id: 12,
+    name: "Out for Delivery Status",
+    steps: [
       {
         category: "Delivery Status",
-        action: "Out for delivery/Ready for",
+        action: "Out for delivery/Ready",
         duration_ms: 159,
       },
+    ],
+  },
+  {
+    id: 13,
+    name: "Delivery Attempts",
+    steps: [
       {
         category: "Delivery Status",
         action: "Delivery Attempted",
         duration_ms: 240,
       },
+    ],
+  },
+  {
+    id: 14,
+    name: "Delivered Orders",
+    steps: [
       { category: "Delivery Status", action: "Delivered", duration_ms: 236 },
     ],
   },
