@@ -154,10 +154,12 @@ function formatDuration(ms) {
 function renderLiveStats() {
   const liveStatsGrid = document.getElementById("liveStatsGrid");
   const desktopData = testData.desktop || {};
+  const mobileData = testData.mobile || {};
   const omsData = testData.oms || {};
   const partnerPanelData = testData.android || {}; // Partner Panel data is mapped to android
 
   // Debug logging to see what data we're working with
+  console.log("renderLiveStats - Mobile data:", mobileData);
   console.log("renderLiveStats - OMS data:", omsData);
   console.log("renderLiveStats - Partner Panel data:", partnerPanelData);
 
@@ -172,6 +174,23 @@ function renderLiveStats() {
   const desktopAvgStepTime =
     desktopSteps > 0
       ? ((desktopData.duration * 1000) / desktopSteps).toFixed(1)
+      : "0";
+
+  // Calculate Mobile stats from real data
+  const mobileJourneys = mobileData.total || 0;
+  const mobileSteps = mobileData.totalSteps || mobileData.total || 0;
+  const mobileSuccessRate =
+    mobileData.successRate ||
+    (mobileData.total > 0
+      ? Math.round((mobileData.passed / mobileData.total) * 100)
+      : 0);
+  const mobileDuration =
+    mobileData.durationFormatted ||
+    formatDuration((mobileData.duration || 0) * 1000);
+  const mobileFailed = mobileData.failed || 0;
+  const mobileAvgStepTime =
+    mobileSteps > 0
+      ? (((mobileData.duration || 0) * 1000) / mobileSteps).toFixed(1)
       : "0";
 
   // Calculate OMS stats from real data
@@ -199,6 +218,13 @@ function renderLiveStats() {
       ? (((partnerPanelData.duration || 0) * 1000) / ppSteps).toFixed(1)
       : "0";
 
+  console.log("Calculated Mobile stats:", {
+    journeys: mobileJourneys,
+    steps: mobileSteps,
+    successRate: mobileSuccessRate,
+    duration: mobileDuration,
+    failed: mobileFailed,
+  });
   console.log("Calculated OMS stats:", {
     journeys: omsJourneys,
     steps: omsSteps,
@@ -237,13 +263,15 @@ function renderLiveStats() {
       icon: '<i class="fas fa-mobile-screen-button"></i>',
       suite: "FNP Mobile Automation - Playwright Test Suite",
       platform: "MOBILE WEB",
-      environment: "prod",
-      duration: "8ms",
-      journeys: 17,
-      steps: 142,
-      successRate: "98.5",
-      avgStepTime: "0.045",
-      failed: 2,
+      environment: mobileData.environment || "prod",
+      duration: mobileDuration,
+      journeys: mobileJourneys,
+      steps: mobileSteps,
+      successRate: mobileSuccessRate.toFixed(1),
+      avgStepTime: mobileAvgStepTime,
+      failed: mobileFailed,
+      lastRun: mobileData.lastRun,
+      isRealData: true,
     },
     {
       key: "oms",
@@ -471,7 +499,7 @@ function render3DColumnChart() {
     exporting: { enabled: false },
     title: { text: null },
     xAxis: { categories: categories, labels: { style: { fontSize: "13px" } } },
-    yAxis: { min: 0, title: { text: "Number of Journeys/Tests" } },
+    yAxis: { min: 0, title: { text: "Number of Journeys" } },
     plotOptions: {
       column: { depth: 25, dataLabels: { enabled: true, format: "{point.y}" } },
     },
