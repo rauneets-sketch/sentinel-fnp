@@ -164,24 +164,21 @@ function App() {
         steps: j.steps,
       }));
 
-      // Count journeys, not individual test steps
-      const total = journeys.length;
+      // Count total test steps across all journeys
+      const total = journeys.reduce(
+        (acc, j) => acc + (j.steps?.length || 0),
+        0,
+      );
 
       const passed = journeys.reduce((acc, j) => {
-        // Count passed journeys
+        // If journey passed, assume all steps passed unless specific counts exist
         if (j.status === "PASSED" || j.passed === 1) {
-          return acc + 1;
+          return acc + (j.steps?.length || 0);
         }
-        return acc;
+        return acc + (j.passed || 0);
       }, 0);
 
-      const failed = journeys.reduce((acc, j) => {
-        // Count failed journeys
-        if (j.status === "FAILED" || j.failed === 1) {
-          return acc + 1;
-        }
-        return acc;
-      }, 0);
+      const failed = total - passed; // Simplified for mock data consistency
 
       const duration = journeys.reduce((acc, j) => acc + (j.duration || 0), 0);
 
@@ -574,7 +571,7 @@ function App() {
         categories,
         labels: { style: { fontSize: "13px" } },
       },
-      yAxis: { min: 0, title: { text: "Number of Journeys" } },
+      yAxis: { min: 0, title: { text: "Number of Test Steps" } },
       plotOptions: {
         column: {
           depth: 25,
