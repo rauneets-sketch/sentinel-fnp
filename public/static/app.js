@@ -248,7 +248,6 @@ function renderLiveStats() {
       suite: "FNP Desktop Automation - Playwright Test Suite",
       platform: "WEB",
       environment: desktopData.environment || "prod",
-      duration: desktopDuration,
       journeys: desktopJourneys,
       steps: desktopSteps,
       successRate: desktopSuccessRate.toFixed(1),
@@ -264,7 +263,6 @@ function renderLiveStats() {
       suite: "FNP Mobile Automation - Playwright Test Suite",
       platform: "MOBILE WEB",
       environment: mobileData.environment || "prod",
-      duration: mobileDuration,
       journeys: mobileJourneys,
       steps: mobileSteps,
       successRate: mobileSuccessRate.toFixed(1),
@@ -280,7 +278,6 @@ function renderLiveStats() {
       suite: "FNP OMS Automation - Playwright Test Suite",
       platform: "ADMIN PANEL",
       environment: omsData.environment || "prod",
-      duration: omsDuration,
       journeys: omsJourneys,
       steps: omsSteps,
       successRate: omsSuccessRate.toFixed(1),
@@ -296,7 +293,6 @@ function renderLiveStats() {
       suite: "FNP Partner Automation - Playwright Test Suite",
       platform: "PARTNER WEB",
       environment: partnerPanelData.environment || "prod",
-      duration: ppDuration,
       journeys: ppJourneys,
       steps: ppSteps,
       successRate: ppSuccessRate.toFixed(1),
@@ -348,7 +344,6 @@ function renderLiveStats() {
         <div class="context-divider"></div>
         <div class="context-line">│ Platform: <strong>${platform.platform}</strong></div>
         <div class="context-line highlight">│ Environment: <strong>${platform.environment}</strong></div>
-        <div class="context-line">│ Duration: <strong>${platform.duration}</strong></div>
         <div class="context-divider"></div>
         <div class="context-line">│ 🛒 User Journeys: <strong>${platform.journeys}</strong></div>
         <div class="context-line">│ 📋 Test Steps: <strong>${platform.steps}</strong></div>
