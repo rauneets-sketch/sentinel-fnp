@@ -166,7 +166,11 @@ function renderLiveStats() {
   // Calculate Desktop stats from real data
   const desktopJourneys = desktopData.modules?.length || 0;
   const desktopSteps = desktopData.total || 0; // Use total which now counts actual steps
-  const desktopSuccessRate = desktopData.successRate || 0;
+  const desktopSuccessRate =
+    desktopData.successRate ||
+    (desktopData.total > 0
+      ? Math.round((desktopData.passed / desktopData.total) * 100)
+      : 0);
   const desktopDuration =
     desktopData.durationFormatted ||
     formatDuration(desktopData.duration * 1000);
@@ -194,9 +198,13 @@ function renderLiveStats() {
       : "0";
 
   // Calculate OMS stats from real data
-  const omsJourneys = omsData.total || 0;
-  const omsSteps = omsData.totalSteps || 0;
-  const omsSuccessRate = omsData.successRate || 0;
+  const omsJourneys = omsData.modules?.length || 0;
+  const omsSteps = omsData.total || 0; // Use total which now counts actual steps
+  const omsSuccessRate =
+    omsData.successRate ||
+    (omsData.total > 0
+      ? Math.round((omsData.passed / omsData.total) * 100)
+      : 0);
   const omsDuration =
     omsData.durationFormatted || formatDuration((omsData.duration || 0) * 1000);
   const omsFailed = omsData.failed || 0;
@@ -206,9 +214,13 @@ function renderLiveStats() {
       : "0";
 
   // Calculate Partner Panel stats from real data
-  const ppJourneys = partnerPanelData.total || 0;
-  const ppSteps = partnerPanelData.totalSteps || 0;
-  const ppSuccessRate = partnerPanelData.successRate || 0;
+  const ppJourneys = partnerPanelData.modules?.length || 0;
+  const ppSteps = partnerPanelData.total || 0; // Use total which now counts actual steps
+  const ppSuccessRate =
+    partnerPanelData.successRate ||
+    (partnerPanelData.total > 0
+      ? Math.round((partnerPanelData.passed / partnerPanelData.total) * 100)
+      : 0);
   const ppDuration =
     partnerPanelData.durationFormatted ||
     formatDuration((partnerPanelData.duration || 0) * 1000);
