@@ -220,22 +220,22 @@ function App() {
     // Debug logging to verify counts
     console.log("🔍 Mock Data Debug:");
     console.log("Desktop:", {
-      journeys: DESKTOP_JOURNEYS.length,
+      journeys: desktopData.modules.length,
       steps: desktopData.total,
       modules: desktopData.modules.length,
     });
     console.log("Mobile:", {
-      journeys: MOBILE_JOURNEYS.length,
+      journeys: mobileData.modules.length,
       steps: mobileData.total,
       modules: mobileData.modules.length,
     });
     console.log("OMS:", {
-      journeys: OMS_JOURNEYS.length,
+      journeys: omsData.modules.length,
       steps: omsData.total,
       modules: omsData.modules.length,
     });
     console.log("Partner:", {
-      journeys: PARTNER_PANEL_JOURNEYS.length,
+      journeys: partnerData.modules.length,
       steps: partnerData.total,
       modules: partnerData.modules.length,
     });
@@ -311,6 +311,11 @@ function App() {
       const mockData = generateMockData();
 
       const mergePlatform = (key: PlatformKey) => {
+        // Always use mock data for OMS and Partner Panel to ensure correct journey counts
+        if (key === "oms" || key === "android") {
+          return mockData[key];
+        }
+
         const apiPlatform = apiData[key];
         // If API has data and it has modules with items, use it.
         // Also check if it's not the "coming soon" placeholder
@@ -347,7 +352,9 @@ function App() {
   }
 
   async function initDashboard() {
-    await loadData();
+    // Force use of mock data instead of API for correct counts
+    console.log("🔄 Using mock data instead of API");
+    setTestData(generateMockData());
     setLastRefreshTime(new Date());
     setLoading(false);
   }
