@@ -733,31 +733,6 @@ export const MOBILE_JOURNEYS = [
       { category: "Navigation", action: "Navigate Back to Homepage" },
     ],
   },
-  {
-    id: 18,
-    name: "Journey 16B: Personalized Product with Upload 4 Photo Purchase",
-    status: "PASSED",
-    passed: 1,
-    failed: 0,
-    duration: 650,
-    steps: [
-      { category: "Navigation", action: "Navigate to Fridge Magnet Product" },
-      {
-        category: "Delivery Setup",
-        action: "Set Delivery Date (15th) & Time Slot (8-9 AM)",
-      },
-      {
-        category: "Photo Upload",
-        action: "Upload 4 Custom Photos (photo1-4.jpg)",
-      },
-      { category: "Cart Management", action: "Add Fridge Magnet to Cart" },
-      { category: "Payment Process", action: "Test QR Payment Method" },
-      {
-        category: "Order Completion",
-        action: "Multi-Photo Upload Journey Completed",
-      },
-    ],
-  },
 ];
 
 export const OMS_JOURNEYS: Journey[] = [
