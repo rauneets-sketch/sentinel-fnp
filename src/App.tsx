@@ -164,7 +164,7 @@ function App() {
         steps: j.steps,
       }));
 
-      // Count journeys, not test steps
+      // Count journeys, not individual test steps
       const total = journeys.length;
 
       const passed = journeys.reduce((acc, j) => {
