@@ -164,8 +164,8 @@ function renderLiveStats() {
   console.log("renderLiveStats - Partner Panel data:", partnerPanelData);
 
   // Calculate Desktop stats from real data
-  const desktopJourneys = desktopData.total || 0;
-  const desktopSteps = desktopData.totalSteps || 0;
+  const desktopJourneys = desktopData.modules?.length || 0;
+  const desktopSteps = desktopData.total || 0; // Use total which now counts actual steps
   const desktopSuccessRate = desktopData.successRate || 0;
   const desktopDuration =
     desktopData.durationFormatted ||
@@ -177,8 +177,8 @@ function renderLiveStats() {
       : "0";
 
   // Calculate Mobile stats from real data
-  const mobileJourneys = mobileData.total || 0;
-  const mobileSteps = mobileData.totalSteps || mobileData.total || 0;
+  const mobileJourneys = mobileData.modules?.length || 0;
+  const mobileSteps = mobileData.total || 0; // Use total which now counts actual steps
   const mobileSuccessRate =
     mobileData.successRate ||
     (mobileData.total > 0
@@ -494,7 +494,7 @@ function render3DColumnChart() {
     exporting: { enabled: false },
     title: { text: null },
     xAxis: { categories: categories, labels: { style: { fontSize: "13px" } } },
-    yAxis: { min: 0, title: { text: "Number of Journeys" } },
+    yAxis: { min: 0, title: { text: "Number of Test Steps" } },
     plotOptions: {
       column: { depth: 25, dataLabels: { enabled: true, format: "{point.y}" } },
     },
