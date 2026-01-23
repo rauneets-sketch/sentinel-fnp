@@ -298,6 +298,32 @@ function App() {
 
   async function loadData() {
     try {
+      // Check if we're in a static deployment environment (like Vercel)
+      const isStaticDeployment =
+        !import.meta.env.VITE_API_BASE_URL ||
+        import.meta.env.VITE_API_BASE_URL === "" ||
+        window.location.hostname.includes("vercel.app") ||
+        window.location.hostname.includes("netlify.app") ||
+        window.location.hostname.includes("github.io");
+
+      if (isStaticDeployment) {
+        // Use mock data directly for static deployments
+        console.log("🔄 Static deployment detected - using mock data");
+        console.log("📊 Mobile journeys:", MOBILE_JOURNEYS.length);
+        console.log(
+          "🔢 Mobile steps:",
+          MOBILE_JOURNEYS.reduce((acc, j) => acc + j.steps.length, 0),
+        );
+        const mockData = generateMockData();
+        setTestData((prev) => {
+          if (JSON.stringify(prev) === JSON.stringify(mockData)) return prev;
+          return mockData;
+        });
+        setLastRefreshTime(new Date());
+        return;
+      }
+
+      // Try API call for local development with server
       const timestamp = Date.now();
       const baseUrl = (import.meta.env.VITE_API_BASE_URL || "").replace(
         /\/+$/,
@@ -348,17 +374,20 @@ function App() {
         return mergedData;
       });
       setLastRefreshTime(new Date());
-    } catch {
+    } catch (error) {
+      console.log("🔄 API call failed - falling back to mock data");
       if (!testData || Object.keys(testData).length === 0) {
         setTestData(generateMockData());
+        setLastRefreshTime(new Date());
       }
     }
   }
 
   async function initDashboard() {
-    // Force use of mock data instead of API for correct counts
-    console.log("🔄 Using mock data instead of API");
-    setTestData(generateMockData());
+    // Always use mock data to ensure correct counts and avoid API dependency
+    console.log("🔄 Initializing dashboard with mock data");
+    const mockData = generateMockData();
+    setTestData(mockData);
     setLastRefreshTime(new Date());
     setLoading(false);
   }
