@@ -68,15 +68,15 @@ const generateMockTestResults = () => {
 
   return {
     desktop: {
-      total: 131,
-      passed: 131,
-      failed: 0,
+      total: 111,
+      passed: 110,
+      failed: 1,
       skipped: 0,
       duration: 6, // Total execution: 6ms as specified
       lastRun: new Date().toISOString(),
-      totalSteps: 131,
+      totalSteps: 111,
       modules: [
-        createModule("Home Page Exploration", 13, 0, 1005),
+        createModule("Home Page Exploration", 14, 0, 1105),
         createModule("Payment Methods Testing", 8, 0, 611),
         createModule("International Phone Number Change", 8, 0, 618),
         createModule("Reminder and FAQ Testing", 6, 0, 470),
@@ -98,11 +98,10 @@ const generateMockTestResults = () => {
         ),
         createModule(
           "Personalized Product with Upload 4 Photo Purchase",
-          6,
-          0,
-          380,
+          1,
+          1,
+          115,
         ),
-        createModule("Gmail OTP Login", 6, 0, 490),
       ],
     },
     mobile: {
