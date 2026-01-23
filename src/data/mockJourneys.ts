@@ -1000,7 +1000,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
 export const MOBILE_JOURNEYS = [
   {
     id: 1,
-    name: "Journey 1: Home Page Exploration & Order Completion",
+    name: "Home Page Exploration & Order Completion",
     status: "PASSED",
     passed: 12,
     failed: 0,
@@ -1082,7 +1082,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 2,
-    name: "Journey 2: Payment Methods Testing",
+    name: "Payment Methods Testing",
     status: "PASSED",
     passed: 7,
     failed: 0,
@@ -1134,7 +1134,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 3,
-    name: "Journey 3: International Phone Number Change",
+    name: "International Phone Number Change",
     status: "PASSED",
     passed: 10,
     failed: 0,
@@ -1204,7 +1204,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 4,
-    name: "Journey 4: Set New Reminder & FAQ Testing",
+    name: "Set New Reminder & FAQ Testing",
     status: "PASSED",
     passed: 6,
     failed: 0,
@@ -1250,7 +1250,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 5,
-    name: "Journey 5: International Purchase Flow",
+    name: "International Purchase Flow",
     status: "PASSED",
     passed: 9,
     failed: 0,
@@ -1314,7 +1314,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 6,
-    name: "Journey 6: Cake Variant Testing",
+    name: "Cake Variant Testing",
     status: "PASSED",
     passed: 8,
     failed: 0,
@@ -1372,7 +1372,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 7,
-    name: "Journey 7: Coupon Testing",
+    name: "Coupon Testing",
     status: "PASSED",
     passed: 7,
     failed: 0,
@@ -1424,7 +1424,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 8,
-    name: "Journey 8: Personalized Text Product",
+    name: "Personalized Text Product",
     status: "PASSED",
     passed: 7,
     failed: 0,
@@ -1476,7 +1476,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 9,
-    name: "Journey 9: Message Card Purchase",
+    name: "Message Card Purchase",
     status: "PASSED",
     passed: 6,
     failed: 0,
@@ -1522,7 +1522,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 10,
-    name: "Journey 10: Product Exploration Journey",
+    name: "Product Exploration Journey",
     status: "PASSED",
     passed: 6,
     failed: 0,
@@ -1568,7 +1568,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 11,
-    name: "Journey 11: Same SKU Delivery Comparison (Courier + Hand Delivery)",
+    name: "Same SKU Delivery Comparison (Courier + Hand Delivery)",
     status: "PASSED",
     passed: 7,
     failed: 0,
@@ -1620,7 +1620,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 12,
-    name: "Journey 12: Search, Filter & Order Completion",
+    name: "Search, Filter & Order Completion",
     status: "PASSED",
     passed: 7,
     failed: 0,
@@ -1672,7 +1672,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 13,
-    name: "Journey 13: Photo Upload Personalization (Single + Multiple)",
+    name: "Photo Upload Personalization (Single + Multiple)",
     status: "PASSED",
     passed: 10,
     failed: 0,
@@ -1742,7 +1742,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 14,
-    name: "Journey 14: Spherical Home Page Icon Exploration",
+    name: "Spherical Home Page Icon Exploration",
     status: "PASSED",
     passed: 4,
     failed: 0,
@@ -1776,7 +1776,7 @@ export const MOBILE_JOURNEYS = [
   },
   {
     id: 15,
-    name: "Journey 15: Gmail OTP",
+    name: "Gmail OTP",
     status: "PASSED",
     passed: 5,
     failed: 0,
