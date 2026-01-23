@@ -111,7 +111,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
     status: "PASSED",
     passed: 14,
     failed: 0,
-    duration: 1105,
+    duration: 1115,
   },
   {
     id: 2,
@@ -475,7 +475,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
   },
   {
     id: 10,
-    name: "Invalid Coupon Testing",
+    name: "Coupon Testing",
     steps: [
       {
         category: "User Authentication",
@@ -507,16 +507,6 @@ export const DESKTOP_JOURNEYS: Journey[] = [
         status: "PASSED",
         duration_ms: 76,
       },
-    ],
-    status: "PASSED",
-    passed: 5,
-    failed: 0,
-    duration: 383,
-  },
-  {
-    id: 11,
-    name: "Valid Coupon Testing",
-    steps: [
       {
         category: "Coupon Testing",
         action: "Apply Valid Coupon Code (GIFT10)",
@@ -549,12 +539,12 @@ export const DESKTOP_JOURNEYS: Journey[] = [
       },
     ],
     status: "PASSED",
-    passed: 5,
+    passed: 10,
     failed: 0,
-    duration: 380,
+    duration: 763,
   },
   {
-    id: 12,
+    id: 11,
     name: "Personalized Product Purchase",
     steps: [
       {
@@ -612,7 +602,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
     duration: 618,
   },
   {
-    id: 13,
+    id: 12,
     name: "Message Card Integration",
     steps: [
       {
@@ -664,7 +654,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
     duration: 542,
   },
   {
-    id: 14,
+    id: 13,
     name: "Product Exploration Journey",
     steps: [
       {
@@ -704,7 +694,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
     duration: 388,
   },
   {
-    id: 15,
+    id: 14,
     name: "Same SKU Product Exploration",
     steps: [
       {
@@ -744,7 +734,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
     duration: 388,
   },
   {
-    id: 16,
+    id: 15,
     name: "Search Based Purchase",
     steps: [
       {
@@ -784,8 +774,8 @@ export const DESKTOP_JOURNEYS: Journey[] = [
     duration: 382,
   },
   {
-    id: 17,
-    name: "Personalized Product with Upload 1 Photo Purchase",
+    id: 16,
+    name: "Photo Upload Purchases",
     steps: [
       {
         category: "Navigation",
@@ -817,16 +807,6 @@ export const DESKTOP_JOURNEYS: Journey[] = [
         status: "PASSED",
         duration_ms: 75,
       },
-    ],
-    status: "PASSED",
-    passed: 5,
-    failed: 0,
-    duration: 400,
-  },
-  {
-    id: 18,
-    name: "Personalized Product with Upload 4 Photo Purchase",
-    steps: [
       {
         category: "Navigation",
         action: "Navigate to Fridge Magnet Product",
@@ -836,16 +816,170 @@ export const DESKTOP_JOURNEYS: Journey[] = [
       {
         category: "Delivery Setup",
         action: "Set Delivery Date (15th) & Time Slot (8-9 AM)",
-        status: "FAILED",
+        status: "PASSED",
         duration_ms: 65,
-        error_message: "Delivery setup failed",
-        error_type: "TIMEOUT",
+      },
+      {
+        category: "Photo Upload",
+        action: "Upload 4 Custom Photos (photo1-4.jpg)",
+        status: "PASSED",
+        duration_ms: 90,
+      },
+      {
+        category: "Cart Management",
+        action: "Add Fridge Magnet to Cart",
+        status: "PASSED",
+        duration_ms: 60,
+      },
+      {
+        category: "Payment Process",
+        action: "Test QR Payment Method",
+        status: "PASSED",
+        duration_ms: 70,
+      },
+      {
+        category: "Order Completion",
+        action: "Multi-Photo Upload Journey Completed",
+        status: "PASSED",
+        duration_ms: 45,
       },
     ],
-    status: "FAILED",
-    passed: 1,
-    failed: 1,
-    duration: 115,
+    status: "PASSED",
+    passed: 11,
+    failed: 0,
+    duration: 780,
+  },
+  {
+    id: 17,
+    name: "Location Testing",
+    steps: [
+      {
+        category: "Navigation",
+        action: "Navigate to Homepage for Location Journey",
+        status: "PASSED",
+        duration_ms: 40,
+      },
+      {
+        category: "Location Change",
+        action: "Select New Pincode Gurgaon",
+        status: "PASSED",
+        duration_ms: 55,
+      },
+      {
+        category: "Location Change",
+        action: "Select Delhi Location",
+        status: "PASSED",
+        duration_ms: 50,
+      },
+      {
+        category: "Navigation",
+        action: "Navigate to PLP and Select Existing Bangalore Pincode",
+        status: "PASSED",
+        duration_ms: 60,
+      },
+      {
+        category: "Location Change",
+        action: "Select Gorakhpur Pincode",
+        status: "PASSED",
+        duration_ms: 55,
+      },
+      {
+        category: "Location Change",
+        action: "Select Final Bangalore Location",
+        status: "PASSED",
+        duration_ms: 50,
+      },
+      {
+        category: "Navigation",
+        action: "Return to Homepage After Location Testing",
+        status: "PASSED",
+        duration_ms: 35,
+      },
+      {
+        category: "Order Completion",
+        action: "Location Testing Completed",
+        status: "PASSED",
+        duration_ms: 40,
+      },
+      {
+        category: "Navigation",
+        action: "Navigate to Homepage for Icon Exploration",
+        status: "PASSED",
+        duration_ms: 30,
+      },
+    ],
+    status: "PASSED",
+    passed: 9,
+    failed: 0,
+    duration: 415,
+  },
+  {
+    id: 18,
+    name: "Spherical Home Page Icon Exploration",
+    steps: [
+      {
+        category: "Category Navigation",
+        action: "Explore Spherical Icons",
+        status: "PASSED",
+        duration_ms: 85,
+      },
+      {
+        category: "Order Completion",
+        action: "Spherical Icon Exploration Completed",
+        status: "PASSED",
+        duration_ms: 75,
+      },
+    ],
+    status: "PASSED",
+    passed: 2,
+    failed: 0,
+    duration: 160,
+  },
+  {
+    id: 20,
+    name: "Gmail OTP Login",
+    steps: [
+      {
+        category: "Gmail OTP Journey",
+        action: "Navigate to Login Page",
+        status: "PASSED",
+        duration_ms: 82,
+      },
+      {
+        category: "Gmail OTP Journey",
+        action: "Logout If Already Logged In",
+        status: "PASSED",
+        duration_ms: 78,
+      },
+      {
+        category: "Gmail OTP Journey",
+        action: "Open Account Drawer",
+        status: "PASSED",
+        duration_ms: 85,
+      },
+      {
+        category: "Gmail OTP Journey",
+        action: "Perform Gmail OTP Login",
+        status: "PASSED",
+        duration_ms: 80,
+      },
+      {
+        category: "Gmail OTP Journey",
+        action: "Verify Login Success",
+        status: "PASSED",
+        duration_ms: 75,
+      },
+      {
+        category: "Order Completion",
+        action: "All Journeys Completed Successfully",
+        status: "PASSED",
+        duration_ms: 90,
+      },
+    ],
+    status: "PASSED",
+    passed: 6,
+    failed: 0,
+    duration: 490,
   },
 ];
 
