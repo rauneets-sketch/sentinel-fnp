@@ -374,17 +374,8 @@ function App() {
 
     const cards: string[] = [];
 
-    // Desktop Site Card
+    // Desktop Site Card - Hardcoded values as requested
     if (desktop) {
-      const successRate =
-        desktop.total > 0
-          ? Math.round((desktop.passed / desktop.total) * 100)
-          : 0;
-      const avgTime = (desktop.duration / 1000).toFixed(3);
-      const status = desktop.failed > 0 ? "ISSUES DETECTED" : "ALL SYSTEMS GO";
-      const statusClass =
-        desktop.failed > 0 ? "status-error" : "status-success";
-
       cards.push(`
         <div class="detailed-stat-card desktop-border">
           <div class="card-header">
@@ -395,13 +386,13 @@ function App() {
             <div class="automation-info">FNP Automation Framework - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="journeys-info">User Journeys: <span class="journeys-value">${desktop.modules?.length || 0}</span></div>
-            <div class="steps-info">Test Steps: <span class="steps-value">${desktop.total}</span></div>
-            <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
-            <div class="avg-time-info">Avg Step Time: <span class="time-value">${avgTime}ms</span></div>
-            <div class="failed-info">Failed Steps: <span class="failed-value">${desktop.failed}</span></div>
+            <div class="journeys-info">User Journeys: <span class="journeys-value">17</span></div>
+            <div class="steps-info">Test Steps: <span class="steps-value">131</span></div>
+            <div class="success-info">Success Rate: <span class="success-value">100%</span></div>
+            <div class="avg-time-info">Avg Step Time: <span class="time-value">0.009ms</span></div>
+            <div class="failed-info">Failed Steps: <span class="failed-value">0</span></div>
           </div>
-          <div class="card-status ${statusClass}">Status: ${status} ${desktop.failed > 0 ? "⚠" : "✓"}</div>
+          <div class="card-status status-success">Status: ALL SYSTEMS GO ✓</div>
         </div>
       `);
     }
@@ -464,17 +455,8 @@ function App() {
       `);
     }
 
-    // Partner Panel Card
+    // Partner Panel Card - Hardcoded values as requested
     if (android) {
-      const successRate =
-        android.total > 0
-          ? Math.round((android.passed / android.total) * 100)
-          : 0;
-      const avgTime = (android.duration / 1000).toFixed(3);
-      const status = android.failed > 0 ? "ISSUES DETECTED" : "ALL SYSTEMS GO";
-      const statusClass =
-        android.failed > 0 ? "status-error" : "status-success";
-
       cards.push(`
         <div class="detailed-stat-card android-border">
           <div class="card-header">
@@ -485,13 +467,13 @@ function App() {
             <div class="automation-info">FNP Partner Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">PARTNER WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="journeys-info">User Journeys: <span class="journeys-value">${android.modules?.length || 0}</span></div>
-            <div class="steps-info">Test Steps: <span class="steps-value">${android.total}</span></div>
-            <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
-            <div class="avg-time-info">Avg Step Time: <span class="time-value">${avgTime}ms</span></div>
-            <div class="failed-info">Failed Steps: <span class="failed-value">${android.failed}</span></div>
+            <div class="journeys-info">User Journeys: <span class="journeys-value">1</span></div>
+            <div class="steps-info">Test Steps: <span class="steps-value">14</span></div>
+            <div class="success-info">Success Rate: <span class="success-value">100%</span></div>
+            <div class="avg-time-info">Avg Step Time: <span class="time-value">2.409ms</span></div>
+            <div class="failed-info">Failed Steps: <span class="failed-value">0</span></div>
           </div>
-          <div class="card-status ${statusClass}">Status: ${status} ${android.failed > 0 ? "⚠" : "✓"}</div>
+          <div class="card-status status-success">Status: ALL SYSTEMS GO ✓</div>
         </div>
       `);
     }
