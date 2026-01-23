@@ -403,7 +403,7 @@ function App() {
 
     const cards: string[] = [];
 
-    // Desktop Site Card - Hardcoded values as requested
+    // Desktop Site Card - Updated values based on test results
     if (desktop) {
       cards.push(`
         <div class="detailed-stat-card desktop-border">
@@ -415,13 +415,13 @@ function App() {
             <div class="automation-info">FNP Automation Framework - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="journeys-info">User Journeys: <span class="journeys-value">17</span></div>
-            <div class="steps-info">Test Steps: <span class="steps-value">131</span></div>
-            <div class="success-info">Success Rate: <span class="success-value">100%</span></div>
-            <div class="avg-time-info">Avg Step Time: <span class="time-value">0.009ms</span></div>
-            <div class="failed-info">Failed Steps: <span class="failed-value">0</span></div>
+            <div class="journeys-info">User Journeys: <span class="journeys-value">14</span></div>
+            <div class="steps-info">Test Steps: <span class="steps-value">111</span></div>
+            <div class="success-info">Success Rate: <span class="success-value">99.1%</span></div>
+            <div class="avg-time-info">Avg Step Time: <span class="time-value">0.054ms</span></div>
+            <div class="failed-info">Failed Steps: <span class="failed-value">1</span></div>
           </div>
-          <div class="card-status status-success">Status: ALL SYSTEMS GO ✓</div>
+          <div class="card-status status-warning">Status: ISSUES DETECTED ⚠</div>
         </div>
       `);
     }
