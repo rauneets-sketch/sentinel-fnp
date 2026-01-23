@@ -121,9 +121,9 @@ const generateMockTestResults = () => {
         createModule("International Purchase Flow", 9, 0, 850),
         createModule("Cake Variant Testing", 8, 0, 700),
         createModule("Coupon Testing", 7, 0, 500),
-        createModule("Personalized Text Product", 6, 0, 750),
+        createModule("Personalized Text Product", 7, 0, 750),
         createModule("Message Card Purchase", 6, 0, 700),
-        createModule("Product Exploration Journey", 5, 0, 500),
+        createModule("Product Exploration Journey", 6, 0, 500),
         createModule(
           "Same SKU Delivery Comparison (Courier + Hand Delivery)",
           7,
@@ -137,8 +137,8 @@ const generateMockTestResults = () => {
           0,
           600,
         ),
-        createModule("Spherical Home Page Icon Exploration", 2, 0, 650),
-        createModule("Location Testing & Pincode Validation", 9, 0, 550),
+        createModule("Spherical Home Page Icon Exploration", 4, 0, 650),
+        createModule("Gmail OTP", 5, 0, 400),
       ],
     },
     android: {
