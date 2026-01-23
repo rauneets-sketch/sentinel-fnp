@@ -240,10 +240,86 @@ const generateMockTestResults = () => {
       passed: 11,
       failed: 0,
       skipped: 0,
-      duration: 39698,
+      duration: 5350,
       lastRun: new Date().toISOString(),
       totalSteps: 11,
-      modules: [createModule("OMS Complete Workflow", 11, 0, 39698)],
+      modules: [
+        {
+          name: "OMS Complete Workflow",
+          passed: 11,
+          failed: 0,
+          duration: 5350,
+          status: "PASSED",
+          steps: [
+            {
+              step_name: "Create New Order",
+              status: "PASSED",
+              duration_ms: 500,
+              category: "Order Management",
+            },
+            {
+              step_name: "Track Order Status",
+              status: "PASSED",
+              duration_ms: 400,
+              category: "Order Tracking",
+            },
+            {
+              step_name: "Process Payment",
+              status: "PASSED",
+              duration_ms: 600,
+              category: "Payment Process",
+            },
+            {
+              step_name: "Manage Inventory",
+              status: "PASSED",
+              duration_ms: 450,
+              category: "Inventory",
+            },
+            {
+              step_name: "Process Refund",
+              status: "PASSED",
+              duration_ms: 550,
+              category: "Refund Management",
+            },
+            {
+              step_name: "Generate Report",
+              status: "PASSED",
+              duration_ms: 350,
+              category: "Reporting",
+            },
+            {
+              step_name: "Bulk Upload Orders",
+              status: "PASSED",
+              duration_ms: 700,
+              category: "Order Management",
+            },
+            {
+              step_name: "Manage Customers",
+              status: "PASSED",
+              duration_ms: 400,
+              category: "Customer Management",
+            },
+            {
+              step_name: "Assign Delivery",
+              status: "PASSED",
+              duration_ms: 500,
+              category: "Delivery Management",
+            },
+            {
+              step_name: "Manage Returns",
+              status: "PASSED",
+              duration_ms: 450,
+              category: "Return Management",
+            },
+            {
+              step_name: "Manage Vendors",
+              status: "PASSED",
+              duration_ms: 400,
+              category: "Vendor Management",
+            },
+          ],
+        },
+      ],
     },
   };
 };
