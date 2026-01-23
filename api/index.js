@@ -34,40 +34,31 @@ function generateMockTestResults() {
 
   return {
     desktop: {
-      total: 111,
-      passed: 110,
-      failed: 1,
+      total: 132,
+      passed: 132,
+      failed: 0,
       skipped: 0,
-      duration: 6, // Total execution: 6ms as specified
+      duration: 7, // Total execution: 7ms as specified
       lastRun: new Date().toISOString(),
-      totalSteps: 111,
+      totalSteps: 132,
       modules: [
-        createModule("Home Page Exploration", 14, 0, 1105),
+        createModule("Home Page Exploration", 14, 0, 1115),
         createModule("Payment Methods Testing", 8, 0, 611),
         createModule("International Phone Number Change", 8, 0, 618),
         createModule("Reminder and FAQ Testing", 6, 0, 470),
         createModule("International Purchase", 8, 0, 620),
         createModule("Combinational Purchase", 13, 0, 1002),
         createModule("Cake Variant Testing", 7, 0, 541),
-        createModule("Invalid Coupon Testing", 5, 0, 383),
-        createModule("Valid Coupon Testing", 5, 0, 380),
+        createModule("Coupon Testing", 10, 0, 763),
         createModule("Personalized Product Purchase", 8, 0, 618),
         createModule("Message Card Integration", 7, 0, 542),
         createModule("Product Exploration Journey", 5, 0, 388),
         createModule("Same SKU Product Exploration", 5, 0, 388),
         createModule("Search Based Purchase", 5, 0, 382),
-        createModule(
-          "Personalized Product with Upload 1 Photo Purchase",
-          5,
-          0,
-          400,
-        ),
-        createModule(
-          "Personalized Product with Upload 4 Photo Purchase",
-          1,
-          1,
-          115,
-        ),
+        createModule("Photo Upload Purchases", 11, 0, 780),
+        createModule("Location Testing", 9, 0, 415),
+        createModule("Spherical Home Page Icon Exploration", 2, 0, 160),
+        createModule("Gmail OTP Login", 6, 0, 490),
       ],
     },
     mobile: {
