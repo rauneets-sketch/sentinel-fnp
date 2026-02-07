@@ -1,0 +1,20 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "rewrites": [
+    { "source": "/api/test-results", "destination": "/api/index" },
+    {
+      "source": "/api/test-results/(.*)",
+      "destination": "/api/test-results/$1"
+    },
+    { "source": "/api/recent-failures", "destination": "/api/recent-failures" },
+    {
+      "source": "/api/tab-performance/(.*)",
+      "destination": "/api/tab-performance/$1"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}

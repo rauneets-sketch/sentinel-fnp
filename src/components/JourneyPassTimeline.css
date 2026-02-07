@@ -1,0 +1,30 @@
+.journey-pass-timeline {
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.chart-container {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 0;
+}
+
+/* Ensure Highcharts legend is always visible */
+.chart-container .highcharts-legend {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.chart-container .highcharts-legend-item {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 500px;
+  }
+}

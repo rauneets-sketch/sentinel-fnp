@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Element Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .warning { background-color: #fff3cd; color: #856404; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🎯 Dashboard Element Test</h1>
+    <p>This page will test if the dashboard elements are loading correctly.</p>
+    
+    <div id="test-results"></div>
+    
+    <h2>📋 Manual Verification Steps:</h2>
+    <ol>
+        <li><strong>Open Dashboard:</strong> <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+        <li><strong>Check Live Test Execution Context:</strong> Should see 5 colored cards showing Desktop Site, Mobile Site, OMS, Partner Panel, and Android status</li>
+        <li><strong>Check Overall Section:</strong> Should see 5 platform cards with success rates</li>
+        <li><strong>Check Journey Details:</strong> Should see 17 journey items that can be expanded</li>
+        <li><strong>Check Charts:</strong> Should see 3 charts - Overview (3D columns), Trend (lines), and Bubble chart</li>
+        <li><strong>Test Interaction:</strong> Click on a journey to expand and see its steps</li>
+    </ol>
+
+    <h2>🔧 Expected Dashboard Sections:</h2>
+    <ul>
+        <li>✅ <strong>Live Test Execution Context:</strong> 5 detailed cards with real-time status</li>
+        <li>✅ <strong>Overall Stats:</strong> 5 platform success rate cards</li>
+        <li>✅ <strong>Journey Details:</strong> 17 journeys (excluding 6, 8, 19)</li>
+        <li>✅ <strong>Test Results Overview Chart:</strong> 3D column chart</li>
+        <li>✅ <strong>Performance Trend Analysis:</strong> Line chart</li>
+        <li>✅ <strong>Real-Time Journey Performance:</strong> Bubble chart</li>
+    </ul>
+
+    <h2>📊 Expected Journey Data:</h2>
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0;">
+        <strong>Journey Format:</strong><br>
+        1. Home Page Exploration (13 steps)<br>
+        2. Payment Methods Testing (8 steps)<br>
+        3. International Phone Number Change (8 steps)<br>
+        4. Reminder and FAQ Testing (6 steps)<br>
+        5. International Purchase (8 steps)<br>
+        7. Combinational Purchase (13 steps)<br>
+        9. Cake Variant Testing (7 steps)<br>
+        10. Coupon Testing (10 steps)<br>
+        11. Personalized Product Purchase (8 steps)<br>
+        12. Message Card Integration (7 steps)<br>
+        13. Product Exploration Journey (5 steps)<br>
+        14. Same SKU Product Exploration (5 steps)<br>
+        15. Search Based Purchase (5 steps)<br>
+        16. Personalized Product with Photo Upload (11 steps)<br>
+        17. Location Testing (9 steps)<br>
+        18. Spherical Home Page Icon Exploration (2 steps)<br>
+        20. Gmail OTP Login (6 steps)
+    </div>
+
+    <script>
+        async function testDashboardAPI() {
+            const resultsDiv = document.getElementById('test-results');
+            
+            try {
+                const response = await fetch('/api/test-results');
+                const data = await response.json();
+                
+                let html = '<h2>🧪 API Test Results:</h2>';
+                
+                // Test desktop data
+                if (data.desktop && data.desktop.total === 17) {
+                    html += '<div class="test-result success">✅ Desktop Site: 17 journeys (correct)</div>';
+                } else {
+                    html += '<div class="test-result error">❌ Desktop Site: Expected 17 journeys, got ' + (data.desktop?.total || 0) + '</div>';
+                }
+                
+                // Test journey names
+                if (data.desktop && data.desktop.modules && data.desktop.modules.length > 0) {
+                    const firstJourney = data.desktop.modules[0];
+                    if (firstJourney.name === 'Home Page Exploration') {
+                        html += '<div class="test-result success">✅ First journey name correct: ' + firstJourney.name + '</div>';
+                    } else {
+                        html += '<div class="test-result warning">⚠️ First journey name: ' + firstJourney.name + '</div>';
+                    }
+                    
+                    html += '<div class="test-result success">✅ Journey has ' + firstJourney.steps.length + ' steps</div>';
+                }
+                
+                // Test other platforms
+                html += '<div class="test-result success">✅ Mobile Site: ' + data.mobile.total + ' journeys</div>';
+                html += '<div class="test-result success">✅ OMS: ' + data.oms.total + ' journeys</div>';
+                html += '<div class="test-result success">✅ Partner Panel: ' + data.android.total + ' journeys</div>';
+                
+                resultsDiv.innerHTML = html;
+                
+            } catch (error) {
+                resultsDiv.innerHTML = '<div class="test-result error">❌ API Test Failed: ' + error.message + '</div>';
+            }
+        }
+        
+        // Run test when page loads
+        testDashboardAPI();
+    </script>
+</body>
+</html>
