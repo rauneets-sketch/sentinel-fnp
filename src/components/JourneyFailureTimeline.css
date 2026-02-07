@@ -1,0 +1,79 @@
+.journey-failure-timeline {
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.chart-container {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 0;
+}
+
+/* Ensure Highcharts legend is always visible */
+.chart-container .highcharts-legend {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.chart-container .highcharts-legend-item {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.insights-panel {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  border-left: 4px solid #ff6b6b;
+}
+
+.insights-panel h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.insights-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insights-panel li {
+  color: #cccccc;
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.insights-panel li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 500px;
+  }
+
+  .insights-panel {
+    padding: 15px;
+  }
+
+  .insights-panel h3 {
+    font-size: 18px;
+  }
+
+  .insights-panel li {
+    font-size: 13px;
+  }
+}
