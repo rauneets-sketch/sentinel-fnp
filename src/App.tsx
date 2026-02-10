@@ -411,13 +411,16 @@ function App() {
 
     const cards: string[] = [];
 
-    // Desktop Site Card - Updated values for 14 journeys with 111 steps, 1 failed
+    // Desktop Site Card - 13 journeys with 111 total steps, all passed
     if (desktop) {
       const hasFailures = desktop.failed > 0;
       const statusText = hasFailures
         ? `Status: ISSUE DETECTED ❌`
         : `Status: ALL SYSTEMS GO ✓`;
       const statusClass = hasFailures ? "status-error" : "status-success";
+      const successRate = desktop.total > 0 ? ((desktop.passed / desktop.total) * 100).toFixed(1) : "100";
+      const avgStepTime = desktop.total > 0 ? (desktop.duration / desktop.total).toFixed(2) : "0.25";
+      
       cards.push(`
         <div class="detailed-stat-card desktop-border">
           <div class="card-header">
@@ -427,12 +430,12 @@ function App() {
           <div class="card-content">
             <div class="automation-info">FNP Automation Framework - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">WEB</span></div>
-            <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="journeys-info">User Journeys: <span class="journeys-value">1</span></div>
-            <div class="steps-info">Test Steps: <span class="steps-value">16</span></div>
-            <div class="success-info">Success Rate: <span class="success-value">100%</span></div>
-            <div class="avg-time-info">Avg Step Time: <span class="time-value">0.25ms</span></div>
-            <div class="failed-info">Failed Steps: <span class="failed-value">0</span></div>
+            <div class="environment-info">Environment: <span class="env-value">PROD</span></div>
+            <div class="journeys-info">User Journeys: <span class="journeys-value">${desktop.modules.length}</span></div>
+            <div class="steps-info">Test Steps: <span class="steps-value">${desktop.total}</span></div>
+            <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
+            <div class="avg-time-info">Avg Step Time: <span class="time-value">${avgStepTime}ms</span></div>
+            <div class="failed-info">Failed Steps: <span class="failed-value">${desktop.failed}</span></div>
           </div>
           <button class="card-status-button ${statusClass}" data-platform="desktop">${statusText}</button>
         </div>
@@ -446,6 +449,9 @@ function App() {
         ? `Status: ISSUE DETECTED ❌`
         : `Status: ALL SYSTEMS GO ✓`;
       const statusClass = hasFailures ? "status-error" : "status-success";
+      const successRate = mobile.total > 0 ? ((mobile.passed / mobile.total) * 100).toFixed(1) : "100";
+      const avgStepTime = mobile.total > 0 ? (mobile.duration / mobile.total).toFixed(2) : "0.25";
+      
       cards.push(`
         <div class="detailed-stat-card mobile-border">
           <div class="card-header">
@@ -456,11 +462,11 @@ function App() {
             <div class="automation-info">FNP Mobile Automation - Playwright Test Suite</div>
             <div class="platform-info">Platform: <span class="platform-value">MOBILE WEB</span></div>
             <div class="environment-info">Environment: <span class="env-value">prod</span></div>
-            <div class="journeys-info">User Journeys: <span class="journeys-value">1</span></div>
-            <div class="steps-info">Test Steps: <span class="steps-value">7</span></div>
-            <div class="success-info">Success Rate: <span class="success-value">100%</span></div>
-            <div class="avg-time-info">Avg Step Time: <span class="time-value">10.000ms</span></div>
-            <div class="failed-info">Failed Steps: <span class="failed-value">0</span></div>
+            <div class="journeys-info">User Journeys: <span class="journeys-value">${mobile.modules.length}</span></div>
+            <div class="steps-info">Test Steps: <span class="steps-value">${mobile.total}</span></div>
+            <div class="success-info">Success Rate: <span class="success-value">${successRate}%</span></div>
+            <div class="avg-time-info">Avg Step Time: <span class="time-value">${avgStepTime}ms</span></div>
+            <div class="failed-info">Failed Steps: <span class="failed-value">${mobile.failed}</span></div>
           </div>
           <button class="card-status-button ${statusClass}" data-platform="mobile">${statusText}</button>
         </div>
@@ -642,21 +648,21 @@ function App() {
       3: "International Phone Number Change",
       4: "Reminder and FAQ Testing",
       5: "International Purchase",
-      6: "Mobile Location Testing", // Not in desktop
+      6: "Mobile Location Testing",
       7: "Combinational Purchase",
-      8: "Mobile Message Card", // Not in desktop
+      8: "Mobile Message Card",
       9: "Cake Variant Testing",
-      10: "Coupon Testing",
+      10: "Valid Coupon Testing",
       11: "Personalized Product Purchase",
       12: "Message Card Integration",
       13: "Product Exploration Journey",
       14: "Same SKU Product Exploration",
       15: "Search Based Purchase",
       16: "Personalized Product with Photo Upload",
-      17: "Location Testing", // Not in desktop
-      18: "Spherical Home Page Icon Exploration", // Mobile only
-      19: "Gmail OTP Login", // Mobile only
-      20: "Gmail OTP Login", // Mobile only
+      17: "Location Testing",
+      18: "Spherical Home Page Icon Exploration",
+      19: "Gmail OTP Login",
+      20: "Gmail OTP Login",
     };
 
     const modulesGrid = document.getElementById("modulesGrid");
@@ -672,7 +678,7 @@ function App() {
       .map((module, index) => {
         // For desktop, use the actual journey IDs from the test results
         const desktopJourneyIds = [
-          1, 2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16,
+          1, 2, 4, 5, 7, 10, 11, 12, 13, 16, 16, 17, 18,
         ];
         const journeyId =
           platform === "desktop"
