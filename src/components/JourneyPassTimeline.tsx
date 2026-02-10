@@ -32,7 +32,7 @@ const JourneyPassTimeline: React.FC<JourneyPassTimelineProps> = ({
     const data: DailyPassData[] = [];
 
     // Sample data for last 7 days (Day 1 = Feb 1, Day 7 = Feb 7)
-    const sampleCounts = [18, 13, 18, 22, 42, 40, 25]
+    const sampleCounts = [18, 13, 18, 22, 42, 40, 33]
 
     // Force dates to be Feb 1-7, 2026
     const dates = [
@@ -338,6 +338,7 @@ const JourneyPassTimeline: React.FC<JourneyPassTimelineProps> = ({
 };
 
 export default JourneyPassTimeline;
+
 
 
 
