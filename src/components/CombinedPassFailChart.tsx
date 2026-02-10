@@ -19,18 +19,18 @@ const CombinedPassFailChart: React.FC = () => {
     const data: DailyData[] = [];
 
     // Sample data for last 7 days (today and previous 6 days)
-    const passedCounts = [16, 14, 17, 18, 13, 18, 20];
-    const failedCounts = [3, 5, 2, 1, 4, 5, 6];
+    const passedCounts = [18, 13, 18, 22, 42, 40, 25];
+    const failedCounts = [1, 4, 5, 24, 6, 8, 3];
 
     // Force dates to be Feb 1-7, 2026
     const dates = [
-      "2026-02-01",
-      "2026-02-02",
-      "2026-02-03",
       "2026-02-04",
       "2026-02-05",
       "2026-02-06",
       "2026-02-07",
+      "2026-02-08",
+      "2026-02-09",
+      "2026-02-10",
     ];
 
     for (let i = 0; i < 7; i++) {
