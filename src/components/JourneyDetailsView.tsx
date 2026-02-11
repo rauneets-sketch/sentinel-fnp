@@ -32,18 +32,29 @@ export function JourneyDetailsView({
   };
 
   const getJourneyData = (plat: PlatformType): Journey[] => {
-    // Map internal platform names to API response keys
-    // 'partner' in UI maps to 'android' in API response (legacy naming)
-    // 'android' in UI maps to 'ios' in API response (legacy naming)
+    // For OMS and Partner Panel, ALWAYS use mock data (they only have 1 journey each)
+    // Ignore any testData from API for these platforms
+    if (plat === "oms") {
+      console.log("🔍 OMS selected - forcing OMS_JOURNEYS (1 journey only)");
+      return OMS_JOURNEYS;
+    }
+    if (plat === "partner") {
+      console.log("🔍 Partner Panel selected - forcing PARTNER_PANEL_JOURNEYS (1 journey only)");
+      return PARTNER_PANEL_JOURNEYS;
+    }
+
+    // For other platforms, use API data if available
     const apiPlatformKey =
-      plat === "partner" ? "android" : plat === "android" ? "ios" : plat;
+      plat === "android" ? "ios" : plat;
 
     // Use real data from Supabase if available, otherwise fall back to mock data
     if (
       testData &&
       testData[apiPlatformKey] &&
-      testData[apiPlatformKey].modules
+      testData[apiPlatformKey].modules &&
+      testData[apiPlatformKey].modules.length > 0
     ) {
+      console.log(`📊 Using API data for ${plat}:`, testData[apiPlatformKey].modules.length, "journeys");
       return testData[apiPlatformKey].modules.map(
         (module: any, index: number) => ({
           id: index + 1,
@@ -58,15 +69,12 @@ export function JourneyDetailsView({
     }
 
     // Fallback to mock data
+    console.log(`📦 Using mock data for ${plat}`);
     switch (plat) {
       case "mobile":
         return MOBILE_JOURNEYS;
       case "android":
         return ANDROID_JOURNEYS;
-      case "oms":
-        return OMS_JOURNEYS;
-      case "partner":
-        return PARTNER_PANEL_JOURNEYS;
       default:
         return DESKTOP_JOURNEYS;
     }
