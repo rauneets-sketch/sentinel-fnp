@@ -16,6 +16,7 @@ import FallingHearts from "./components/FallingHearts";
 import JourneyFailureTimeline from "./components/JourneyFailureTimeline";
 import JourneyPassTimeline from "./components/JourneyPassTimeline";
 import CombinedPassFailChart from "./components/CombinedPassFailChart";
+import PlatformGraphSwitcher from "./components/PlatformGraphSwitcher";
 
 const initModule = (mod: any) => {
   if (typeof mod === "function") {
@@ -845,38 +846,12 @@ function App() {
 
           <JourneyDetailsView testData={testData} />
 
-          <div className="charts-section">
-            <div className="chart-card half-width-chart">
-              <div className="chart-title">
-                <i className="fas fa-clock" />
-                Fail (Last 7 Days)
-              </div>
-              <div className="chart-subtitle">
-                Automation results across critical customer journeys
-                highlighting stability and risk windows.
-              </div>
-              <JourneyFailureTimeline />
-            </div>
-
-            <div className="chart-card half-width-chart">
-              <div className="chart-title">
-                <i className="fas fa-check-circle" />
-                Pass (Last 7 Days)
-              </div>
-              <div className="chart-subtitle">
-                Successful test executions showing stability patterns across
-                different times.
-              </div>
-              <JourneyPassTimeline />
-            </div>
-          </div>
-
           <div className="modules-section">
-            <div className="chart-title">
-              <i className="fas fa-chart-line" />
-              Automation Test Execution Trend Pass & Fail
+            <div className="chart-title" style={{ marginBottom: '20px' }}>
+              <i className="fas fa-chart-bar" />
+              Platform Analytics - Switch Graphs by Platform
             </div>
-            <CombinedPassFailChart />
+            <PlatformGraphSwitcher initialPlatform="overall" />
           </div>
         </>
       )}
