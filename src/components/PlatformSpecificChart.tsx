@@ -51,7 +51,7 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
     overall: {
       name: 'Overall (All Platforms)',
       // Feb 5-11: Total Passed across all platforms (Feb 11: 14+10+1+1=26)
-      passedCounts: [35, 38, 27, 42, 48, 40, 6],
+      passedCounts: [35, 38, 27, 42, 48, 40, 3],
       // Feb 5-11: Total Failed across all platforms (Feb 11: 1+3+0+0=4)
       failedCounts: [14, 12, 29, 14, 8, 16, 0],
       color: '#4f46e5' // Darker indigo for better contrast
