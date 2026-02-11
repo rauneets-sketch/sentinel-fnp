@@ -1202,7 +1202,92 @@ export const MOBILE_JOURNEYS = [
       },
     ],
   },
-
+  {
+    id: 16,
+    name: "Single Photo Upload Journey",
+    status: "PASSED",
+    passed: 5,
+    failed: 0,
+    duration: 1918,
+    steps: [
+      {
+        category: "Photo Upload Journey",
+        action: "Navigate to Photo Frame Product",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Photo Upload Journey",
+        action: "Complete Photo Upload and Add to Cart",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Cart Management",
+        action: "add the personalized product to cart",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Payment Process",
+        action: "test payment for personalized product",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Navigation",
+        action: "navigate back to homepage after Journey 16",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+    ],
+  },
+  {
+    id: 17,
+    name: "Multiple Photo Upload Journey",
+    status: "PASSED",
+    passed: 6,
+    failed: 0,
+    duration: 2301,
+    steps: [
+      {
+        category: "Navigation",
+        action: "navigate to fridge magnet product",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Delivery Setup",
+        action: "set delivery date and time for fridge magnet",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Photo Upload Journey",
+        action: "upload four photos to fridge magnet",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Cart Management",
+        action: "add fridge magnet to cart",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Payment Process",
+        action: "test payment for fridge magnet",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+      {
+        category: "Homepage Setup",
+        action: "Clear Cart",
+        status: "PASSED",
+        duration_ms: 383.52,
+      },
+    ],
+  },
   {
     id: 18,
     name: "Spherical Home Page Icon Exploration",
