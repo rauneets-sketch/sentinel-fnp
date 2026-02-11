@@ -439,7 +439,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
       },
       {
         category: "Personalization",
-        action: "Add Custom Text \"ASTHA SINGH\"",
+        action: 'Add Custom Text "ASTHA SINGH"',
         status: "PASSED",
         duration_ms: 0.25,
       },
@@ -577,92 +577,7 @@ export const DESKTOP_JOURNEYS: Journey[] = [
     failed: 0,
     duration: 1.25,
   },
-  {
-    id: 16,
-    name: "Personalized Product with Upload 1 Photo Purchase",
-    steps: [
-      {
-        category: "Navigation",
-        action: "Navigate to Personalized Cushion Product",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Photo Upload",
-        action: "Upload Custom Photo from Local Path",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Cart Management",
-        action: "Add Personalized Product to Cart",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Payment Process",
-        action: "Test QR Payment Method",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Navigation",
-        action: "Navigate Back to Homepage",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-    ],
-    status: "PASSED",
-    passed: 5,
-    failed: 0,
-    duration: 1.25,
-  },
-  {
-    id: 16,
-    name: "Personalized Product with Upload 4 Photo Purchase",
-    steps: [
-      {
-        category: "Navigation",
-        action: "Navigate to Fridge Magnet Product",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Delivery Setup",
-        action: "Set Delivery Date (15th) & Time Slot (8-9 AM)",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Photo Upload",
-        action: "Upload 4 Custom Photos (photo1-4.jpg)",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Cart Management",
-        action: "Add Fridge Magnet to Cart",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Payment Process",
-        action: "Test QR Payment Method",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-      {
-        category: "Order Completion",
-        action: "Multi-Photo Upload Journey Completed",
-        status: "PASSED",
-        duration_ms: 0.25,
-      },
-    ],
-    status: "PASSED",
-    passed: 6,
-    failed: 0,
-    duration: 1.5,
-  },
+
   {
     id: 17,
     name: "Location Testing",
@@ -1170,7 +1085,8 @@ export const MOBILE_JOURNEYS = [
       },
       {
         category: "Order Completion",
-        action: "should have completed the personalized text product purchase flow",
+        action:
+          "should have completed the personalized text product purchase flow",
         status: "PASSED",
         duration_ms: 383.52,
       },
@@ -1286,98 +1202,7 @@ export const MOBILE_JOURNEYS = [
       },
     ],
   },
-  {
-    id: 16,
-    name: "Single Photo upload journey",
-    status: "PASSED",
-    passed: 5,
-    failed: 0,
-    duration: 1918,
-    steps: [
-      {
-        category: "Photo Upload Journey",
-        action: "Navigate to Photo Frame Product",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Photo Upload Journey",
-        action: "Complete Photo Upload and Add to Cart",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Cart Management",
-        action: "add the personalized product to cart",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Payment Process",
-        action: "test payment for personalized product",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Navigation",
-        action: "navigate back to homepage after Journey 16",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-    ],
-  },
-  {
-    id: 16,
-    name: "Multiple photo Upload Journey",
-    status: "PASSED",
-    passed: 7,
-    failed: 0,
-    duration: 2685,
-    steps: [
-      {
-        category: "Navigation",
-        action: "navigate to fridge magnet product",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Delivery Setup",
-        action: "set delivery date and time for fridge magnet",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Photo Upload",
-        action: "upload four photos to fridge magnet",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Cart Management",
-        action: "add fridge magnet to cart",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Payment Process",
-        action: "test payment for fridge magnet",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Order Completion",
-        action: "should have completed the personalized photo upload journey",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-      {
-        category: "Homepage Setup",
-        action: "Clear Cart",
-        status: "PASSED",
-        duration_ms: 383.52,
-      },
-    ],
-  },
+
   {
     id: 18,
     name: "Spherical Home Page Icon Exploration",
