@@ -31,7 +31,7 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
       name: 'Mobile Site',
       // Feb 5-11: Passed and Failed data (Feb 11: -1 passed = 10)
       passedCounts: [14, 16, 11, 16, 21, 17, 15],
-      failedCounts: [6, 7, 13, 8, 3, 7, 3],
+      failedCounts: [6, 7, 13, 8, 3, 7, 4],
       color: '#8b5cf6'
     },
     oms: {
