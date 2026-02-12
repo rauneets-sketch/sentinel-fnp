@@ -41,7 +41,7 @@ import {
   ANDROID_JOURNEYS,
   OMS_JOURNEYS,
   PARTNER_PANEL_JOURNEYS,
-} from "./data/mockJourneys";
+} from "./data/journeyDetails";
 
 interface ModuleStats {
   name: string;
@@ -419,9 +419,15 @@ function App() {
         ? `Status: ISSUE DETECTED ❌`
         : `Status: ALL SYSTEMS GO ✓`;
       const statusClass = hasFailures ? "status-error" : "status-success";
-      const successRate = desktop.total > 0 ? ((desktop.passed / desktop.total) * 100).toFixed(1) : "100";
-      const avgStepTime = desktop.total > 0 ? (desktop.duration / desktop.total).toFixed(2) : "0.25";
-      
+      const successRate =
+        desktop.total > 0
+          ? ((desktop.passed / desktop.total) * 100).toFixed(1)
+          : "100";
+      const avgStepTime =
+        desktop.total > 0
+          ? (desktop.duration / desktop.total).toFixed(2)
+          : "0.25";
+
       cards.push(`
         <div class="detailed-stat-card desktop-border">
           <div class="card-header">
@@ -450,9 +456,13 @@ function App() {
         ? `Status: ISSUE DETECTED ❌`
         : `Status: ALL SYSTEMS GO ✓`;
       const statusClass = hasFailures ? "status-error" : "status-success";
-      const successRate = mobile.total > 0 ? ((mobile.passed / mobile.total) * 100).toFixed(1) : "100";
-      const avgStepTime = mobile.total > 0 ? (mobile.duration / mobile.total).toFixed(2) : "0.25";
-      
+      const successRate =
+        mobile.total > 0
+          ? ((mobile.passed / mobile.total) * 100).toFixed(1)
+          : "100";
+      const avgStepTime =
+        mobile.total > 0 ? (mobile.duration / mobile.total).toFixed(2) : "0.25";
+
       cards.push(`
         <div class="detailed-stat-card mobile-border">
           <div class="card-header">
@@ -847,7 +857,7 @@ function App() {
           <JourneyDetailsView testData={testData} />
 
           <div className="modules-section">
-            <div className="chart-title" style={{ marginBottom: '20px' }}>
+            <div className="chart-title" style={{ marginBottom: "20px" }}>
               <i className="fas fa-chart-bar" />
               Platform Analytics - Switch Graphs by Platform
             </div>
