@@ -23,7 +23,7 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
     desktop: {
       name: 'Desktop Site',
       // Feb 5-11: Passed and Failed data (Feb 11: +1 passed, +1 failed = 14 passed, 1 failed)
-      passedCounts: [14, 10, 18, 19, 15, 21, 9],
+      passedCounts: [14, 10, 18, 19, 15, 21, 10],
       failedCounts: [5, 14, 6, 5, 9, 2, 2],
       color: '#3b82f6'
     },
