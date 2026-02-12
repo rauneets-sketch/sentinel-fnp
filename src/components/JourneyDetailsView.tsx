@@ -7,7 +7,7 @@ import {
   MOBILE_JOURNEYS,
   OMS_JOURNEYS,
   PARTNER_PANEL_JOURNEYS,
-} from "../data/mockJourneys";
+} from "../data/journeyDetails";
 
 interface JourneyDetailsViewProps {
   platform?: string;
@@ -39,13 +39,14 @@ export function JourneyDetailsView({
       return OMS_JOURNEYS;
     }
     if (plat === "partner") {
-      console.log("🔍 Partner Panel selected - forcing PARTNER_PANEL_JOURNEYS (1 journey only)");
+      console.log(
+        "🔍 Partner Panel selected - forcing PARTNER_PANEL_JOURNEYS (1 journey only)",
+      );
       return PARTNER_PANEL_JOURNEYS;
     }
 
     // For other platforms, use API data if available
-    const apiPlatformKey =
-      plat === "android" ? "ios" : plat;
+    const apiPlatformKey = plat === "android" ? "ios" : plat;
 
     // Use real data from Supabase if available, otherwise fall back to mock data
     if (
@@ -54,7 +55,11 @@ export function JourneyDetailsView({
       testData[apiPlatformKey].modules &&
       testData[apiPlatformKey].modules.length > 0
     ) {
-      console.log(`📊 Using API data for ${plat}:`, testData[apiPlatformKey].modules.length, "journeys");
+      console.log(
+        `📊 Using API data for ${plat}:`,
+        testData[apiPlatformKey].modules.length,
+        "journeys",
+      );
       return testData[apiPlatformKey].modules.map(
         (module: any, index: number) => ({
           id: index + 1,
