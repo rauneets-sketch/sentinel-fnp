@@ -23,37 +23,37 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
     desktop: {
       name: 'Desktop Site',
       // Feb 5-11: Passed and Failed data (Feb 11: +1 passed, +1 failed = 14 passed, 1 failed)
-      passedCounts: [10, 18, 19, 15, 21, 23, 19],
-      failedCounts: [14, 6, 5, 9, 2, 3, 3],
+      passedCounts: [18, 19, 15, 21, 23, 19, 3],
+      failedCounts: [6, 5, 9, 2, 3, 3, 0],
       color: '#3b82f6'
     },
     mobile: {
       name: 'Mobile Site',
       // Feb 5-11: Passed and Failed data (Feb 11: -1 passed = 10)
-      passedCounts: [11, 16, 21, 17, 18, 22, 20],
-      failedCounts: [13, 8, 3, 7, 4, 2, 1],
+      passedCounts: [16, 21, 17, 18, 22, 20, 3],
+      failedCounts: [8, 3, 7, 4, 2, 1, 0],
       color: '#8b5cf6'
     },
     oms: {
       name: 'OMS',
       // Feb 5-11: Passed and Failed data (Feb 7 has 1 failure, not 2)
-      passedCounts: [3, 4, 4, 4, 4, 4, 3],
-      failedCounts: [1, 0, 0, 0, 0, 0, 0],
+      passedCounts: [4, 4, 4, 4, 4, 3, 1],
+      failedCounts: [0, 0, 0, 0, 0, 0, 1],
       color: '#f59e0b'
     },
     partner: {
       name: 'Partner Panel',
       // Feb 5-11: Passed and Failed data (Feb 7 has 1 failure, not 2)
-      passedCounts: [3, 4, 4, 4, 4, 4, 3],
-      failedCounts: [1, 0, 0, 0, 0, 0, 0],
+      passedCounts: [4, 4, 4, 4, 4, 3, 1],
+      failedCounts: [0, 0, 0, 0, 0, 0, 1],
       color: '#10b981'
     },
    overall: {
       name: 'Overall (All Platforms)',
       // Feb 5-11: Total Passed across all platforms (Feb 11: 14+10+1+1=26)
-      passedCounts: [38, 27, 42, 48, 40, 48, 43],
+      passedCounts: [27, 42, 48, 40, 48, 43, 8],
       // Feb 5-11: Total Failed across all platforms (Feb 11: 1+3+0+0=4)
-      failedCounts: [12, 29, 14, 8, 16, 5, 2],
+      failedCounts: [29, 14, 8, 16, 5, 2, 0],
       color: '#4f46e5' // Darker indigo for better contrast
     }
   };
@@ -64,13 +64,13 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
     const config = platformConfigs[platform];
 
     const dates = [
-      "2026-02-07",
       "2026-02-08",
       "2026-02-09",
       "2026-02-10",
       "2026-02-11",
       "2026-02-12",
       "2026-02-13",
+      "2026-02-14",
     ];
 
     for (let i = 0; i < 7; i++) {
