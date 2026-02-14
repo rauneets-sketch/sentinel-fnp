@@ -24,7 +24,7 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
       name: 'Desktop Site',
       // Feb 5-11: Passed and Failed data (Feb 11: +1 passed, +1 failed = 14 passed, 1 failed)
       passedCounts: [18, 19, 15, 21, 23, 19, 7],
-      failedCounts: [6, 5, 9, 2, 3, 3, 1],
+      failedCounts: [6, 5, 9, 2, 3, 3, 3],
       color: '#3b82f6'
     },
     mobile: {
@@ -53,7 +53,7 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
       // Feb 5-11: Total Passed across all platforms (Feb 11: 14+10+1+1=26)
       passedCounts: [27, 42, 48, 40, 48, 43, 16],
       // Feb 5-11: Total Failed across all platforms (Feb 11: 1+3+0+0=4)
-      failedCounts: [29, 14, 8, 16, 5, 2, 3],
+      failedCounts: [29, 14, 8, 16, 5, 2, 5],
       color: '#4f46e5' // Darker indigo for better contrast
     }
   };
