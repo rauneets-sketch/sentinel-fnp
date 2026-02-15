@@ -72,7 +72,7 @@ const FallingHearts = () => {
           }}
           onClick={(e) => handleHeartClick(heart.id, e)}
         >
-          ❤️
+          
         </div>
       ))}
     </div>
