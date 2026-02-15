@@ -83,9 +83,26 @@ function App() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [selectedPlatformForDetails, setSelectedPlatformForDetails] =
     useState<PlatformKey | null>(null);
+  const [maintenanceMode, setMaintenanceMode] = useState(false);
 
   const overviewChartRef = useRef<Highcharts.Chart | null>(null);
   const trendChartRef = useRef<Highcharts.Chart | null>(null);
+
+  // Check maintenance mode on mount
+  useEffect(() => {
+    const checkMaintenanceMode = async () => {
+      try {
+        const response = await fetch("/config.json");
+        const config = await response.json();
+        if (config.maintenanceMode) {
+          window.location.href = "/maintenance.html";
+        }
+      } catch (error) {
+        console.log("Config not found, continuing normally");
+      }
+    };
+    checkMaintenanceMode();
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
