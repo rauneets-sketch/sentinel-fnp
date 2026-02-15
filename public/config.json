@@ -1,4 +1,5 @@
 {
-  "maintenanceMode": false,
+  "maintenanceMode": true,
   "message": "We're currently performing maintenance. Please check back soon!"
 }
+
