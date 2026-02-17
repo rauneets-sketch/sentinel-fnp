@@ -37,14 +37,14 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
     oms: {
       name: 'OMS',
       // Feb 5-11: Passed and Failed data (Feb 7 has 1 failure, not 2)
-      passedCounts: [4, 4, 4, 4, 3, 4, 4],
+      passedCounts: [4, 4, 4, 4, 3, 4, 3],
       failedCounts: [0, 0, 0, 0, 0, 0, 0],
       color: '#f59e0b'
     },
     partner: {
       name: 'Partner Panel',
       // Feb 5-11: Passed and Failed data (Feb 7 has 1 failure, not 2)
-      passedCounts: [4, 4, 4, 4, 3, 4, 4],
+      passedCounts: [4, 4, 4, 4, 4, 4, 3],
       failedCounts: [0, 0, 0, 0, 0, 0, 0],
       color: '#10b981'
     },
