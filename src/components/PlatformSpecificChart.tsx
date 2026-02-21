@@ -23,37 +23,37 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
     desktop: {
       name: 'Desktop Site',
       // Feb 5-11: Passed and Failed data (Feb 11: +1 passed, +1 failed = 14 passed, 1 failed)
-      passedCounts: [19, 10, 5, 6, 12, 16, 2],
-      failedCounts: [3, 14, 13, 7,12, 5, 0],
+      passedCounts: [19, 10, 5, 6, 12, 16, 12],
+      failedCounts: [3, 14, 13, 7,12, 5, 5],
       color: '#3b82f6'
     },
     mobile: {
       name: 'Mobile Site',
       // Feb 5-11: Passed and Failed data (Feb 11: -1 passed = 10)
-      passedCounts: [20, 11, 6, 5, 14, 12, 2],
-      failedCounts: [1, 13, 12, 7, 8, 9, 0],
+      passedCounts: [20, 11, 6, 5, 14, 12, 13],
+      failedCounts: [1, 13, 12, 7, 8, 9, 4],
       color: '#8b5cf6'
     },
     oms: {
       name: 'OMS',
       // Feb 5-11: Passed and Failed data (Feb 7 has 1 failure, not 2)
-      passedCounts: [3, 4, 4, 4, 4, 3, 1],
+      passedCounts: [3, 4, 4, 4, 4, 4, 3],
       failedCounts: [1, 0, 0, 0, 0, 0, 0],
       color: '#f59e0b'
     },
     partner: {
       name: 'Partner Panel',
       // Feb 5-11: Passed and Failed data (Feb 7 has 1 failure, not 2)
-      passedCounts: [3, 4, 4, 4, 4, 3, 1],
+      passedCounts: [3, 4, 4, 4, 4, 4, 3],
       failedCounts: [1, 0, 0, 0, 0, 0, 0],
       color: '#10b981'
     },
    overall: {
       name: 'Overall (All Platforms)',
       // Feb 5-11: Total Passed across all platforms (Feb 11: 14+10+1+1=26)
-      passedCounts: [43, 24, 17, 15, 32, 34, 6],
+      passedCounts: [43, 24, 17, 15, 32, 34, 32],
       // Feb 5-11: Total Failed across all platforms (Feb 11: 1+3+0+0=4)
-      failedCounts: [2, 13, 25, 14, 20, 14, 0],
+      failedCounts: [2, 13, 25, 14, 20, 14, 9],
       color: '#4f46e5' // Darker indigo for better contrast
     }
   };
