@@ -56,7 +56,7 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
       failedCounts: [14, 20, 14, 22, 13, 32, 8],
       color: '#4f46e5' // Darker indigo for better contrast
     }
-  };,
+  };
 
   // Initialize with last 7 days data for selected platform
   const initializeData = (): DailyData[] => {
