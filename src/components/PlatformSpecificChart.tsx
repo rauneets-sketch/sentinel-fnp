@@ -53,10 +53,10 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
       // Feb 5-11: Total Passed across all platforms (Feb 11: 14+10+1+1=26)
       passedCounts: [15, 32, 34, 36, 19, 23, 16],
       // Feb 5-11: Total Failed across all platforms (Feb 11: 1+3+0+0=4)
-      failedCounts: [14, 20, 14, 22, 32, 8],
+      failedCounts: [14, 20, 14, 22, 13, 32, 8],
       color: '#4f46e5' // Darker indigo for better contrast
     }
-  };
+  };,
 
   // Initialize with last 7 days data for selected platform
   const initializeData = (): DailyData[] => {
