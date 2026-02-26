@@ -23,15 +23,15 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
     desktop: {
       name: 'Desktop Site',
       // Feb 5-11: Passed and Failed data (Feb 11: +1 passed, +1 failed = 14 passed, 1 failed)
-      passedCounts: [16, 12, 2, 6, 0, 4, 6],
-      failedCounts: [5, 14, 12, 18, 11, 2, 12],
+      passedCounts: [12, 2, 6, 0, 4, 6, 4],
+      failedCounts: [14, 12, 18, 11, 2, 12, 2],
       color: '#3b82f6'
     },
     mobile: {
       name: 'Mobile Site',
       // Feb 5-11: Passed and Failed data (Feb 11: -1 passed = 10)
-      passedCounts: [12, 16, 12, 9, 0, 4, 18],
-      failedCounts: [9, 8, 1, 14, 11, 2, 1],
+      passedCounts: [16, 12, 9, 0, 4, 18, 6],
+      failedCounts: [8, 1, 14, 11, 2, 1, 1],
       color: '#8b5cf6'
     },
     oms: {
@@ -51,9 +51,9 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
    overall: {
       name: 'Overall (All Platforms)',
       // Feb 5-11: Total Passed across all platforms (Feb 11: 14+10+1+1=26)
-      passedCounts: [32, 34, 36, 19, 23, 4, 30],
+      passedCounts: [34, 36, 19, 23, 4, 30, 16],
       // Feb 5-11: Total Failed across all platforms (Feb 11: 1+3+0+0=4)
-      failedCounts: [20, 14, 22, 13, 32, 22, 13],
+      failedCounts: [14, 22, 13, 32, 22, 13, 10],
       color: '#4f46e5' // Darker indigo for better contrast
     }
   };
@@ -64,13 +64,13 @@ const PlatformSpecificChart: React.FC<PlatformSpecificChartProps> = ({ platform 
     const config = platformConfigs[platform];
 
     const dates = [
-      "2026-02-20",
       "2026-02-21",
       "2026-02-22",
       "2026-02-23",
       "2026-02-24",
       "2026-02-25",
       "2026-02-26",
+      "2026-02-27",
       
     ];
 
